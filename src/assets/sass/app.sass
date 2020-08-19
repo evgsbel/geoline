@@ -1,5 +1,6 @@
 //includes
 @import 'utils/font.sass'
+@import 'components/accordeon.sass'
 
 
 // animations
@@ -66,10 +67,16 @@
 body
   font-size: 16px
   font-family: 'mont-medium', serif
+  background-color: #F8F8F8
 ul
   list-style: none
   margin: 0
   padding: 0
+.svg-icons
+  position: absolute
+  opacity: 0
+  height: 0
+  top: 0
 .container
   position: relative
   display: grid
@@ -99,6 +106,7 @@ ul
 // first
 .top-slider
   overflow: hidden
+  margin-bottom: 0
 .first
   background-color: #0079D4
   background-repeat: no-repeat
@@ -383,6 +391,106 @@ ul
 //content
 .content
   grid-column: 5/13
+  &__in
+    margin-top: 30px
+    margin-bottom: 90px
+    .title
+      font-size: 25px
+      font-family: 'mont-medium', serif
+      color: #252525
+      margin-bottom: 20px
+    ul
+      li
+        position: relative
+        color: #262626
+        padding-left: 50px
+        color: #262626
+        font-family: 'got-regular'
+        font-size: 14px
+        line-height: 35px
+        &:before
+          content: ''
+          display: block
+          width: 20px
+          height: 2px
+          background-color: #999999
+          background-repeat: no-repeat
+          position: absolute
+          left: 0
+          top: 44%
+    &_design
+      background-repeat: no-repeat
+      &_right
+        background-position: right top
+      &_left
+        background-position: left top
+        .title
+          text-align: center
+          margin-right: 50px
+          padding-top: 20px
+  &__flex
+    justify-content: flex-end
+    margin-right: 50px
+
+.case
+  &__wrapper
+    justify-content: space-between
+  &__item
+    padding: 0 15px
+    box-sizing: border-box
+    flex: 0 0 30%
+    max-width: 30%
+  &__ttl
+    font-family: 'mont-medium', Serif
+    font-size: 25px
+    text-transform: uppercase
+    margin-bottom: 25px
+  &__list
+    font-family: 'got-regular', Serif
+    font-size: 14px
+    margin-bottom: 40px
+    span
+      margin-bottom: 20px
+      display: block
+      b
+        font-family: 'got-medium', Serif
+  &__link
+    font-size: 14px
+    font-family: 'got-regular', Serif
+    color: #262626
+    &:hover
+      color: #0B7CD3
+
+.footer
+  background-color: #252525
+  padding: 30px 0
+  margin-top: 130px
+  &__item
+    a, p
+      line-height: 25px
+      color: #fff
+      font-size: 14px
+      text-decoration: none
+    p:last-child
+      line-height: 35px
+  &__copy
+    grid-column: 5/7
+  &__email
+    grid-column: 7/9
+  &__adress
+    grid-column: 9/12
+    p
+      line-height: 30px
+.slick-dotted.slick-slider
+  margin-bottom: 0
+
+
+
+
+
+
+
+
 
 
 

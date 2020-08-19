@@ -325,15 +325,21 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var slick_carousel_slick_slick_min__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(slick_carousel_slick_slick_min__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _fancyapps_fancybox__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @fancyapps/fancybox */ "./node_modules/@fancyapps/fancybox/dist/jquery.fancybox.js");
 /* harmony import */ var _fancyapps_fancybox__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_fancyapps_fancybox__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _js_app__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./js/app */ "./src/js/app.js");
-/* harmony import */ var _js_app__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_js_app__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _assets_sass_utils_libs_sass__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./assets/sass/utils/libs.sass */ "./src/assets/sass/utils/libs.sass");
-/* harmony import */ var _assets_sass_utils_libs_sass__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_assets_sass_utils_libs_sass__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _assets_sass_app_sass__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./assets/sass/app.sass */ "./src/assets/sass/app.sass");
-/* harmony import */ var _assets_sass_app_sass__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_assets_sass_app_sass__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _assets_sass_media_sass__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./assets/sass/media.sass */ "./src/assets/sass/media.sass");
-/* harmony import */ var _assets_sass_media_sass__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_assets_sass_media_sass__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var jquery_ui_ui_widgets_accordion__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! jquery-ui/ui/widgets/accordion */ "./node_modules/jquery-ui/ui/widgets/accordion.js");
+/* harmony import */ var jquery_ui_ui_widgets_accordion__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(jquery_ui_ui_widgets_accordion__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _js_app__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./js/app */ "./src/js/app.js");
+/* harmony import */ var _js_app__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_js_app__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _js_accordeon__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./js/accordeon */ "./src/js/accordeon.js");
+/* harmony import */ var _js_accordeon__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_js_accordeon__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _assets_sass_utils_libs_sass__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./assets/sass/utils/libs.sass */ "./src/assets/sass/utils/libs.sass");
+/* harmony import */ var _assets_sass_utils_libs_sass__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_assets_sass_utils_libs_sass__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var _assets_sass_app_sass__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./assets/sass/app.sass */ "./src/assets/sass/app.sass");
+/* harmony import */ var _assets_sass_app_sass__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_assets_sass_app_sass__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var _assets_sass_media_sass__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./assets/sass/media.sass */ "./src/assets/sass/media.sass");
+/* harmony import */ var _assets_sass_media_sass__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_assets_sass_media_sass__WEBPACK_IMPORTED_MODULE_8__);
 // JS
+
+
 
 
 
@@ -356,6 +362,46 @@ fetch("./assets/img/svg/sprite.svg").then(function (res) {
 
 /***/ }),
 
+/***/ "./src/js/accordeon.js":
+/*!*****************************!*\
+  !*** ./src/js/accordeon.js ***!
+  \*****************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function($) {
+
+var $uiAccordion = $('.js-ui-accordion');
+$uiAccordion.accordion({
+  collapsible: true,
+  heightStyle: 'content',
+  activate: function activate(event, ui) {
+    var newHeaderId = ui.newHeader.attr('id'); // if (newHeaderId) {
+    //     history.pushState(null, null, '#' + newHeaderId);
+    // }
+  },
+  create: function create(event, ui) {
+    var $this = $(event.target);
+    var $activeAccordion = $(window.location.hash);
+
+    if ($this.find($activeAccordion).length) {
+      $this.accordion('option', 'active', $this.find($this.accordion('option', 'header')).index($activeAccordion));
+    }
+  }
+});
+$(window).on('hashchange', function (event) {
+  var $activeAccordion = $(window.location.hash);
+  var $parentAccordion = $activeAccordion.parents('.js-ui-accordion');
+
+  if ($activeAccordion.length) {
+    $parentAccordion.accordion('option', 'active', $parentAccordion.find($uiAccordion.accordion('option', 'header')).index($activeAccordion));
+  }
+});
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js")))
+
+/***/ }),
+
 /***/ "./src/js/app.js":
 /*!***********************!*\
   !*** ./src/js/app.js ***!
@@ -366,25 +412,8 @@ fetch("./assets/img/svg/sprite.svg").then(function (res) {
 /* WEBPACK VAR INJECTION */(function($) {$('.language__link').hover(function () {
   $('.language__link').removeClass('is-active');
   $(this).toggleClass('is-active');
-}); // $('.top-slider-js').slick({
-//     customPaging: function(slider, i) {
-//         var current = i + 1;
-//         current = current < 10 ? "0" + current : current;
-//
-//         var total = slider.slideCount;
-//         total = total < 10 ? "0" + total : total;
-//
-//         return (
-//             '<button type="button" role="button" tabindex="0" class="slick-dots-button">\
-//             <span class="slick-dots-current">' + current + '</span>\
-// 			<span class="slick-dots-separator"></span>\
-// 			<span class="slick-dots-total">' + total + '</span>\
-// 		</button>'
-//         );
-//     }
-// });
-
-window.onload = function () {
+});
+$(document).ready(function () {
   var $slider = $('.top-slider-js');
 
   if ($slider.length) {
@@ -417,10 +446,10 @@ window.onload = function () {
       autoplaySpeed: 5000
     });
   }
-};
+});
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js")))
 
 /***/ })
 
 /******/ });
-//# sourceMappingURL=app.63ad4625f0b9a6d518c6.js.map
+//# sourceMappingURL=app.5d7957c64e9ae492d63e.js.map

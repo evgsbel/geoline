@@ -3,25 +3,7 @@ $('.language__link').hover(function () {
     $(this).toggleClass('is-active');
 })
 
-
-// $('.top-slider-js').slick({
-//     customPaging: function(slider, i) {
-//         var current = i + 1;
-//         current = current < 10 ? "0" + current : current;
-//
-//         var total = slider.slideCount;
-//         total = total < 10 ? "0" + total : total;
-//
-//         return (
-//             '<button type="button" role="button" tabindex="0" class="slick-dots-button">\
-//             <span class="slick-dots-current">' + current + '</span>\
-// 			<span class="slick-dots-separator"></span>\
-// 			<span class="slick-dots-total">' + total + '</span>\
-// 		</button>'
-//         );
-//     }
-// });
-window.onload = function () {
+$(document).ready(function () {
     let $slider = $('.top-slider-js');
 
     if ($slider.length) {
@@ -56,5 +38,6 @@ window.onload = function () {
             autoplay: true,
             autoplaySpeed: 5000,
         });
+
     }
-}
+})

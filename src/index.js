@@ -2,8 +2,9 @@
 import * as $ from 'jquery'
 import 'slick-carousel/slick/slick.min';
 import '@fancyapps/fancybox'
+import 'jquery-ui/ui/widgets/accordion'
 import './js/app'
-
+import './js/accordeon'
 // SCSS
 import './assets/sass/utils/libs.sass'
 import './assets/sass/app.sass'
