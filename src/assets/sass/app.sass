@@ -1,0 +1,390 @@
+//includes
+@import 'utils/font.sass'
+
+
+// animations
+@-webkit-keyframes mousePoint
+  0%
+    opacity: 0
+    top: 65%
+
+  20%
+    opacity: 1
+    top: 55%
+
+  40%
+    opacity: 1
+    top: 55%
+
+  60%
+    opacity: 1
+    top: 20%
+
+  61%
+    opacity: 1
+    top: 20%
+
+  67%
+    opacity: 0
+    top: 20%
+
+  100%
+    opacity: 0
+    top: 20%
+
+
+@keyframes mousePoint
+  0%
+    opacity: 0
+    top: 65%
+
+  20%
+    opacity: 1
+    top: 55%
+
+  40%
+    opacity: 1
+    top: 55%
+
+  60%
+    opacity: 1
+    top: 20%
+
+  61%
+    opacity: 1
+    top: 20%
+
+  67%
+    opacity: 0
+    top: 20%
+
+  100%
+    opacity: 0
+    top: 20%
+
+//base
+body
+  font-size: 16px
+  font-family: 'mont-medium', serif
+ul
+  list-style: none
+  margin: 0
+  padding: 0
+.container
+  position: relative
+  display: grid
+  grid-template-columns: repeat(12, 1fr)
+  grid-column-gap: 40px
+  overflow: hidden
+  width: 1720px
+  max-width: 100%
+  margin: 0 auto
+.d-flex
+  display: flex
+.title
+  font-size: 30px
+  font-family: 'mont-bold', serif
+  margin-bottom: 50px
+//header
+.header
+  position: absolute
+  top: 35px
+  left: 0
+  right: 0
+  margin: 0 auto
+  width: 1720px
+  max-width: 100%
+  height: 77px
+  z-index: 1
+// first
+.top-slider
+  overflow: hidden
+.first
+  background-color: #0079D4
+  background-repeat: no-repeat
+  background-size: cover
+  padding: 35px 0 50px
+  box-sizing: border-box
+  &:focus, &:active
+    outline: none
+    border: 0
+  &__ctn
+    align-items: center
+    position: relative
+    grid-template-rows: minmax(100px, auto) -webkit-calc(100vh - 100px)
+    grid-template-rows: minmax(100px, auto) calc(100vh - 100px)
+  &__head
+    align-items: center
+    grid-column: 1 / span 13
+    display: grid
+    grid-template-columns: repeat(12, 1fr)
+  &__content
+    grid-column: 1 / span 13
+    display: grid
+    grid-template-columns: repeat(12, 1fr)
+    position: relative
+    z-index: 1
+  &__bottom
+    grid-column: 1 / span 13
+    display: grid
+    grid-template-columns: repeat(12, 1fr)
+    position: relative
+.logo
+  grid-column: 1 / 3
+  align-items: center
+  &__caption
+    color: #fff
+    margin-left: 20px
+    font-family: 'gil-extrabold', serif
+    font-size: 30px
+    line-height: 21px
+.nav
+  grid-column: 7 / 11
+  position: relative
+  &__wrapper
+    justify-content: space-between
+  &__item
+    position: relative
+    padding-right: 10px
+    transition: .5s all ease-in-out
+    &_sub:before
+      content: ''
+      display: block
+      background-image: url("data:image/svg+xml,%3Csvg width='5' height='2' viewBox='0 0 5 2' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M2.68506 1.92456L0.815918 0.0555191H4.5541C4.82119 0.0555191 3.41936 1.30155 2.68506 1.92456Z' fill='%2378C0FF'/%3E%3C/svg%3E%0A")
+      background-repeat: no-repeat
+      width: 5px
+      height: 2px
+      position: absolute
+      right: 0
+      top: 50%
+    &:hover, &_active
+      &:before
+        background-image: url("data:image/svg+xml,%3Csvg width='5' height='2' viewBox='0 0 5 2' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M2.27979 1.92456L0.410645 0.0555191H4.14883C4.41591 0.0555191 3.01409 1.30155 2.27979 1.92456Z' fill='white'/%3E%3C/svg%3E%0A")
+      a
+        color: #fff
+  &__link
+    color: #78C0FF
+    font-family: 'mont-regular', serif
+    font-size: 15px
+    text-decoration: none
+    transition: .5s all ease-in-out
+.top-phone
+  grid-column: 11 / 13
+  display: block
+  font-size: 25px
+  text-align: right
+  font-family: 'gil-bold', serif
+  color: #fff
+  text-decoration: none
+.banner
+  color: #fff
+  &__txt
+    grid-column: 3 / 7
+  &__ttl
+    font-size: 47px
+    font-family: 'gil-bold', serif
+    line-height: 40px
+    margin-bottom: 45px
+  &__subttl
+    font-family: 'got-regular'
+    font-size: 20px
+    line-height: 30px
+.mouse
+  &__caption
+    color: #fff
+    font-size: 20px
+    font-family: 'mont-regular', serif
+    letter-spacing: 0.05em
+    line-height: 21px
+    transform: rotate(-90deg)
+    position: absolute
+    top: -110px
+    left: -55px
+  &__icon
+    width: 36px
+    height: 50px
+    -webkit-border-radius: 50px
+    -moz-border-radius: 50px
+    border-radius: 50px
+    border: 1px solid #fff
+    position: relative
+    grid-column: 1/2
+  &__point
+    position: absolute
+    background-color: #fff
+    width: 6px
+    height: 14px
+    -webkit-border-radius: 50%
+    -moz-border-radius: 50%
+    border-radius: 50px
+    left: 50%
+    top: 70%
+    transform: translate(-50%, 0)
+    animation-name: mousePoint
+    animation-duration: 2.3s
+    animation-iteration-count: infinite
+    animation-direction: reverse
+    animation-timing-function: linear
+    animation-fill-mode: backwards
+
+.language
+  grid-column: 12/13
+  border-bottom: 1px solid #78C0FF
+  padding-bottom: 14px
+  display: flex
+  margin-left: auto
+  position: relative
+  &__link
+    color: #78C0FF
+    font-family: 'mont-regular', serif
+    font-size: 20px
+    text-decoration: none
+    transition: .5s all ease-in-out
+    &_rus
+      padding-right: 10px
+      &.is-active:after
+        left: 0
+        width: 50%
+    &_eng
+      padding-left: 10px
+      &.is-active:after
+        left: 50%
+        width: 100%
+    &:hover, &.is-active
+      color: #fff
+    &:after
+      content: ''
+      height: 4px
+      background-color: #fff
+      display: block
+      position: absolute
+      bottom: -1px
+      transition: .5s all ease-in-out
+
+.slider
+  &__counter
+    color: #fff
+    position: absolute
+    top: 45%
+    right: 4%
+    display: flex
+    align-items: flex-end
+  &__number
+    font-family: 'mont-light', serif
+    font-size: 200px
+    position: relative
+    &:after
+      content: ''
+      width: 136px
+      height: 136px
+      display: block
+      background-image: url("data:image/svg+xml,%3Csvg width='136' height='136' viewBox='0 0 136 136' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.22754 135.06L135.387 0.89975' stroke='white'/%3E%3C/svg%3E%0A")
+      position: absolute
+      top: 50%
+      right: -60px
+  &__count
+    font-size: 50px
+    font-family: 'mont-regular'
+    color: #5EACF0
+  &__dots
+    position: absolute
+    bottom: 50px
+    max-width: 100%
+    width: 1200px
+    left: 0
+    right: 0
+    margin: 0 auto
+    display: flex
+    button
+      font-size: 0
+      width: 15px
+      height: 15px
+      -webkit-border-radius: 50px
+      -moz-border-radius: 50px
+      border-radius: 50px
+      background-color: transparent
+      border: 2px solid #fff
+      transition: .3s all ease-in-out
+      cursor: pointer
+      &:hover
+        background-color: #fff
+        width: 53px
+      &:focus, &:active
+        outline: none
+        border: 0
+    li
+      text-align: center
+      width: 53px
+      &.slick-active
+        margin-right: 10px
+        button
+          background-color: #fff
+          width: 53px
+
+
+//page-header
+.page-header
+  position: relative
+  margin-bottom: 90px
+  .nav
+    grid-column: 9/13
+  .nav__link
+    color: #2F2F2F
+  .nav__item:hover a, .nav__item_active a
+    color: #0B7CD3
+  .nav__item_sub:before
+    background-image: url("data:image/svg+xml,%3Csvg width='4' height='3' viewBox='0 0 4 3' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.97876 2.15932L0.109619 0.290283H3.8478C4.11489 0.290283 2.71306 1.53631 1.97876 2.15932Z' fill='black'/%3E%3C/svg%3E%0A")
+    .page-header .nav__item_sub:before
+      background-image: url("data:image/svg+xml,%3Csvg width='5' height='3' viewBox='0 0 5 3' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M2.65601 2.15932L0.786865 0.290283H4.52505C4.79214 0.290283 3.39031 1.53631 2.65601 2.15932Z' fill='%230B7CD3'/%3E%3C/svg%3E%0A")
+  .logo__caption
+    color: #252525
+
+//sidebar
+.sidebar
+  grid-column: 1/4
+  &__nav
+    &_wr
+      &_top
+        margin-bottom: 90px
+      &_bottom
+        margin-bottom: 50px
+    &_item
+      margin-bottom: 2em
+    &_link
+      font-family: 'Arial', serif
+      color: #5F5F5F
+      font-size: 18px
+      text-decoration: none
+      transition: .5s all ease-in-out
+      &:hover
+        color: #0B7CD3
+  &__contacts
+    justify-content: space-between
+    align-items: center
+  &__social
+    &_item
+      background-color: #0B7CD3
+      width: 40px
+      height: 40px
+      display: flex
+      justify-content: center
+      align-items: center
+      -webkit-border-radius: 50%
+      -moz-border-radius: 50%
+      border-radius: 50%
+      &:not(last-child)
+        margin-right: 30px
+  &__phone
+    text-decoration: none
+    font-size: 20px
+    font-family: 'mont-bold', serif
+    color: #1D2022
+
+//content
+.content
+  grid-column: 5/13
+
+
+
+
+
