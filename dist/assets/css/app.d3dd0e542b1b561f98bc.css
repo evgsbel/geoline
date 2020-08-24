@@ -937,7 +937,9 @@ ul {
     width: 100%;
     margin-bottom: 20px; }
   .sidebar.in-fix {
-    max-width: 30%; } }
+    max-width: 30%; }
+  .page-header .nav {
+    grid-column: 8/13; } }
 
 
-/*# sourceMappingURL=app.4847cd2d784633127ff7.css.map*/
+/*# sourceMappingURL=app.d3dd0e542b1b561f98bc.css.map*/
