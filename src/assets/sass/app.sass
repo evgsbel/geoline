@@ -335,6 +335,12 @@ ul
 .page-header
   position: relative
   margin-bottom: 90px
+  &.is-active
+    position: fixed
+    width: 100%
+    top: 0
+    z-index: 20
+    background-color: #fff
   .nav
     grid-column: 9/13
     position: relative
@@ -381,16 +387,16 @@ ul
 .sidebar
   grid-column: 1/4
   &.in-fix
-    top: 20px
+    top: 160px
     position: fixed
   &__nav
     &_wr
       &_top
-        margin-bottom: 90px
-      &_bottom
         margin-bottom: 50px
+      &_bottom
+        margin-bottom: 30px
     &_item
-      margin-bottom: 2em
+      margin-bottom: 15px
     &_link
       font-family: 'Arial', serif
       color: #5F5F5F

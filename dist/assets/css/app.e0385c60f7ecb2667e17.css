@@ -731,6 +731,12 @@ ul {
 .page-header {
   position: relative;
   margin-bottom: 90px; }
+  .page-header.is-active {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 20;
+    background-color: #fff; }
   .page-header .nav {
     grid-column: 9/13;
     position: relative; }
@@ -773,14 +779,14 @@ ul {
 .sidebar {
   grid-column: 1/4; }
   .sidebar.in-fix {
-    top: 20px;
+    top: 160px;
     position: fixed; }
   .sidebar__nav_wr_top {
-    margin-bottom: 90px; }
-  .sidebar__nav_wr_bottom {
     margin-bottom: 50px; }
+  .sidebar__nav_wr_bottom {
+    margin-bottom: 30px; }
   .sidebar__nav_item {
-    margin-bottom: 2em; }
+    margin-bottom: 15px; }
   .sidebar__nav_link {
     font-family: 'Arial', serif;
     color: #5F5F5F;
@@ -948,4 +954,4 @@ ul {
     top: 10px; } }
 
 
-/*# sourceMappingURL=app.13f1196aba064cb38cc8.css.map*/
+/*# sourceMappingURL=app.e0385c60f7ecb2667e17.css.map*/
