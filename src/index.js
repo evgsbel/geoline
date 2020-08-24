@@ -1,10 +1,12 @@
 // JS
-import * as $ from 'jquery'
+//import * as $ from 'jquery'
 import 'slick-carousel/slick/slick.min';
 import '@fancyapps/fancybox'
 import 'jquery-ui/ui/widgets/accordion'
+
 import './js/app'
 import './js/accordeon'
+import './js/scrollAnimations.js'
 // SCSS
 import './assets/sass/utils/libs.sass'
 import './assets/sass/app.sass'

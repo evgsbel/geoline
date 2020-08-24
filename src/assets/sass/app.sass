@@ -64,6 +64,9 @@
     top: 20%
 
 //base
+body, html
+  height: 100%
+  margin: 0
 body
   font-size: 16px
   font-family: 'mont-medium', serif
@@ -82,7 +85,6 @@ ul
   display: grid
   grid-template-columns: repeat(12, 1fr)
   grid-column-gap: 40px
-  overflow: hidden
   width: 1720px
   max-width: 100%
   margin: 0 auto
@@ -119,8 +121,9 @@ ul
   &__ctn
     align-items: center
     position: relative
-    grid-template-rows: minmax(100px, auto) -webkit-calc(100vh - 100px)
-    grid-template-rows: minmax(100px, auto) calc(100vh - 100px)
+    //grid-template-rows: minmax(100px, auto) -webkit-calc(100vh - 100px)
+    //grid-template-rows: minmax(100px, auto) calc(100vh - 100px)
+    height: 100vh
   &__head
     align-items: center
     grid-column: 1 / span 13
@@ -152,19 +155,17 @@ ul
   &__wrapper
     justify-content: space-between
   &__item
-    position: relative
-    padding-right: 10px
     transition: .5s all ease-in-out
-    &_sub:before
+    display: flex
+    align-items: center
+    &_sub:after
       content: ''
       display: block
       background-image: url("data:image/svg+xml,%3Csvg width='5' height='2' viewBox='0 0 5 2' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M2.68506 1.92456L0.815918 0.0555191H4.5541C4.82119 0.0555191 3.41936 1.30155 2.68506 1.92456Z' fill='%2378C0FF'/%3E%3C/svg%3E%0A")
       background-repeat: no-repeat
       width: 5px
       height: 2px
-      position: absolute
-      right: 0
-      top: 50%
+      margin-left: 10px
     &:hover, &_active
       &:before
         background-image: url("data:image/svg+xml,%3Csvg width='5' height='2' viewBox='0 0 5 2' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M2.27979 1.92456L0.410645 0.0555191H4.14883C4.41591 0.0555191 3.01409 1.30155 2.27979 1.92456Z' fill='white'/%3E%3C/svg%3E%0A")
@@ -257,7 +258,7 @@ ul
       padding-left: 10px
       &.is-active:after
         left: 50%
-        width: 100%
+        width: 55%
     &:hover, &.is-active
       color: #fff
     &:after
@@ -296,7 +297,7 @@ ul
     color: #5EACF0
   &__dots
     position: absolute
-    bottom: 50px
+    bottom: 160px
     max-width: 100%
     width: 1200px
     left: 0
@@ -336,20 +337,52 @@ ul
   margin-bottom: 90px
   .nav
     grid-column: 9/13
-  .nav__link
-    color: #2F2F2F
-  .nav__item:hover a, .nav__item_active a
-    color: #0B7CD3
-  .nav__item_sub:before
-    background-image: url("data:image/svg+xml,%3Csvg width='4' height='3' viewBox='0 0 4 3' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.97876 2.15932L0.109619 0.290283H3.8478C4.11489 0.290283 2.71306 1.53631 1.97876 2.15932Z' fill='black'/%3E%3C/svg%3E%0A")
-    .page-header .nav__item_sub:before
-      background-image: url("data:image/svg+xml,%3Csvg width='5' height='3' viewBox='0 0 5 3' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M2.65601 2.15932L0.786865 0.290283H4.52505C4.79214 0.290283 3.39031 1.53631 2.65601 2.15932Z' fill='%230B7CD3'/%3E%3C/svg%3E%0A")
+    position: relative
+    &__item
+      line-height: 50px
+    &__link
+      color: #2F2F2F
+    &__item:hover .nav__link, .nav__item_active .nav__link
+      color: #0B7CD3
+    &__item_sub:before
+      background-image: url("data:image/svg+xml,%3Csvg width='4' height='3' viewBox='0 0 4 3' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.97876 2.15932L0.109619 0.290283H3.8478C4.11489 0.290283 2.71306 1.53631 1.97876 2.15932Z' fill='black'/%3E%3C/svg%3E%0A")
+      .page-header .nav__item_sub:before
+        background-image: url("data:image/svg+xml,%3Csvg width='5' height='3' viewBox='0 0 5 3' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M2.65601 2.15932L0.786865 0.290283H4.52505C4.79214 0.290283 3.39031 1.53631 2.65601 2.15932Z' fill='%230B7CD3'/%3E%3C/svg%3E%0A")
+    &__sub
+      opacity: 0
+      position: absolute
+      right: 0
+      top: 50px
+      width: 725px
+      background-color: #0B7CD3
+      box-shadow: 0px 20px 20px rgba(0, 0, 0, 0.05)
+      -webkit-border-radius: 3px
+      -moz-border-radius: 3px
+      border-radius: 3px
+      padding: 25px 40px
+      box-sizing: border-box
+      z-index: -1
+      line-height: 1
+      transition: .3s all ease-in-out
+      &.show
+        opacity: 1
+        z-index: 15
+      &_link
+        color: #fff
+        font-size: 13px
+        font-family: 'mont-regular', serif
+        text-decoration: none
+        line-height: 40px
+
   .logo__caption
     color: #252525
 
 //sidebar
 .sidebar
   grid-column: 1/4
+  &.in-fix
+    top: 20px
+    position: fixed
   &__nav
     &_wr
       &_top
@@ -465,6 +498,8 @@ ul
   background-color: #252525
   padding: 30px 0
   margin-top: 130px
+  position: relative
+  bottom: -40px
   &__item
     a, p
       line-height: 25px
@@ -483,16 +518,10 @@ ul
       line-height: 30px
 .slick-dotted.slick-slider
   margin-bottom: 0
-
-
-
-
-
-
-
-
-
-
-
-
-
+#one
+  height: 100%
+#two
+  background-color: #F8F8F8
+  height: auto
+  z-index: 15
+  position: relative
