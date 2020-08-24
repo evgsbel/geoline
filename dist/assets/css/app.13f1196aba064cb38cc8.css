@@ -939,7 +939,13 @@ ul {
   .sidebar.in-fix {
     max-width: 30%; }
   .page-header .nav {
-    grid-column: 8/13; } }
+    grid-column: 8/13; }
+  .banner__txt {
+    grid-column: 3/9; }
+  .slider__counter {
+    top: 25%; }
+  .header {
+    top: 10px; } }
 
 
-/*# sourceMappingURL=app.d3dd0e542b1b561f98bc.css.map*/
+/*# sourceMappingURL=app.13f1196aba064cb38cc8.css.map*/
