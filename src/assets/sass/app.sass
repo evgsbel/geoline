@@ -94,6 +94,10 @@ ul
   font-size: 30px
   font-family: 'mont-bold', serif
   margin-bottom: 50px
+.only-mobile
+  display: none
+img
+  max-width: 100%
 //header
 .header
   position: absolute
@@ -209,6 +213,7 @@ ul
     position: absolute
     top: -110px
     left: -55px
+    text-decoration: none
   &__icon
     width: 36px
     height: 50px
@@ -419,7 +424,7 @@ ul
       -webkit-border-radius: 50%
       -moz-border-radius: 50%
       border-radius: 50%
-      &:not(last-child)
+      &:first-child
         margin-right: 30px
   &__phone
     text-decoration: none
@@ -531,3 +536,135 @@ ul
   height: auto
   z-index: 15
   position: relative
+
+//preloader
+.preloader
+  display: inline-block
+  position: relative
+  transform: scale(0)
+  svg
+    fill: #fff
+    width: 68px
+    height: 99px
+  &__wrp
+    position: fixed
+    width: 100vw
+    height: 100vh
+    left: 0
+    top: 0
+    right: 0
+    bottom: 0
+    z-index: 4
+    background-color: #016EC0
+    display: flex
+    justify-content: center
+    align-items: center
+//hamburger
+.hamburger
+  display: none
+  grid-column: 12/13
+  width: 50px
+  height: 50px
+  transition: .5s all ease-in-out
+  position: relative
+  border: 0
+  background-color: transparent
+  &:focus,&:active
+    outline: none
+    border: 0
+  &:after, &:before
+    position: absolute
+    content: ''
+    left: 50%
+    -webkit-transform: translateX(-50%)
+    -ms-transform: translateX(-50%)
+    transform: translateX(-50%)
+    background-color: #fff
+    width: 30px
+    height: 3px
+    -webkit-transition: .5s all ease-in-out
+    -o-transition: .5s all ease-in-out
+    transition: .5s all ease-in-out
+  &:after
+    bottom: 20px
+  &:before
+    top: 20px
+//mobile menu
+.menu
+  position: absolute
+  top: 0
+  right: -100%
+  background-color: #0D3F65
+  opacity: 0.95
+  box-shadow: 0 20px 20px rgba(0, 0, 0, 0.08)
+  padding: 30px
+  min-height: 100vh
+  z-index: 3
+  transition: all 1.5s cubic-bezier(0.23, 1, 0.32, 1)
+  display: flex
+  flex-direction: column
+  justify-content: space-between
+  z-index: 10
+  display: none
+  &__top
+    align-items: center
+    justify-content: space-between
+  &__close
+    border: 0
+    background-color: transparent
+    display: block
+  .nav__wrapper
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    margin: 0 -30px
+    .nav__item
+      width: 100%
+      text-align: center
+      flex-wrap: wrap
+      &:after
+        content: none
+    .nav__link
+      color: #fff
+      line-height: 40px
+      display: block
+      margin: 0 auto
+      position: relative
+    .nav__item_sub .nav__link:before
+      content: ''
+      display: block
+      background-image: url("data:image/svg+xml,%3Csvg width='4' height='2' viewBox='0 0 4 2' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M2 2L0 0H4L2 2Z' fill='white'/%3E%3C/svg%3E%0A")
+      background-repeat: no-repeat
+      width: 4px
+      height: 2px
+      position: absolute
+      right: -15px
+      top: 50%
+    .nav__item_sub.is-open .nav__link
+      color: #0B7CD3
+    .nav__item_sub.is-open .nav__link:before
+      background-image: url("data:image/svg+xml,%3Csvg width='4' height='3' viewBox='0 0 4 3' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M2 0.5L4 2.5L0 2.5L2 0.5Z' fill='%230B7CD3'/%3E%3C/svg%3E%0A")
+
+    .sub__menu_mobile
+      background-color: #0B2F4A
+      width: 100%
+      display: none
+      padding: 20px 0
+      &.is-active
+        display: block
+      &_link
+        color: #fff
+        line-height: 30px
+        font-size: 15px
+        font-family: 'mont-regular', Serif
+        display: block
+  .sidebar__social
+    justify-content: center
+
+.menu-open
+  height: 100vh
+  overflow: hidden
+.menu-open .menu
+  right: 0
+
+    
