@@ -98,17 +98,50 @@ ul
   display: none
 img
   max-width: 100%
+.section-in
+  padding-top: 160px
 //header
 .header
-  position: absolute
-  top: 35px
+  position: fixed
+  top: 0
   left: 0
   right: 0
   margin: 0 auto
-  width: 1720px
-  max-width: 100%
-  height: 77px
-  z-index: 1
+  width: 100%
+  max-width: 100% 
+  height: 92px
+  z-index: 100
+  .logo_blue
+    display: none
+//page-header
+.page-header
+  margin-bottom: 90px
+  background-color: #fff
+  .logo_white
+    display: none
+  .logo_blue
+    display: block
+  .top-phone
+    display: none
+  .nav
+    grid-column: 9/13
+    position: relative
+    &__link
+      color: #2F2F2F
+    &__item:hover .nav__link, .nav__item_active .nav__link
+      color: #0B7CD3
+    &__item_sub:before
+      background-image: url("data:image/svg+xml,%3Csvg width='4' height='3' viewBox='0 0 4 3' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.97876 2.15932L0.109619 0.290283H3.8478C4.11489 0.290283 2.71306 1.53631 1.97876 2.15932Z' fill='black'/%3E%3C/svg%3E%0A")
+      .page-header .nav__item_sub:before
+        background-image: url("data:image/svg+xml,%3Csvg width='5' height='3' viewBox='0 0 5 3' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M2.65601 2.15932L0.786865 0.290283H4.52505C4.79214 0.290283 3.39031 1.53631 2.65601 2.15932Z' fill='%230B7CD3'/%3E%3C/svg%3E%0A")
+    &__sub
+      &_item
+        background-color: #0B7CD3
+      &_link
+        color: #fff
+
+  .logo__caption
+    color: #252525
 // first
 .top-slider
   overflow: hidden
@@ -162,6 +195,7 @@ img
     transition: .5s all ease-in-out
     display: flex
     align-items: center
+    cursor: pointer
     &_sub:after
       content: ''
       display: block
@@ -173,7 +207,7 @@ img
     &:hover, &_active
       &:before
         background-image: url("data:image/svg+xml,%3Csvg width='5' height='2' viewBox='0 0 5 2' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M2.27979 1.92456L0.410645 0.0555191H4.14883C4.41591 0.0555191 3.01409 1.30155 2.27979 1.92456Z' fill='white'/%3E%3C/svg%3E%0A")
-      a
+      .nav__link
         color: #fff
   &__link
     color: #78C0FF
@@ -181,6 +215,29 @@ img
     font-size: 15px
     text-decoration: none
     transition: .5s all ease-in-out
+  &__sub
+    height: 0
+    overflow: hidden
+    opacity: 0
+    transition: all 0.5s ease-in
+    position: absolute
+    width: 725px
+    top: 0
+    right: 0
+    box-shadow: 0px 20px 20px rgba(0, 0, 0, 0.05)
+    border-radius: 3px
+    padding-top: 30px
+    box-sizing: border-box
+    z-index: 1000
+    &_item
+      padding-left: 25px
+      background-color: #fff
+    &_link
+      color: #353535
+      font-size: 13px
+      font-family: 'mont-regular', serif
+      text-decoration: none
+      line-height: 40px
 .top-phone
   grid-column: 11 / 13
   display: block
@@ -335,64 +392,13 @@ img
           background-color: #fff
           width: 53px
 
-
-//page-header
-.page-header
-  position: relative
-  margin-bottom: 90px
-  &.is-active
-    position: fixed
-    width: 100%
-    top: 0
-    z-index: 20
-    background-color: #fff
-  .nav
-    grid-column: 9/13
-    position: relative
-    &__item
-      line-height: 50px
-    &__link
-      color: #2F2F2F
-    &__item:hover .nav__link, .nav__item_active .nav__link
-      color: #0B7CD3
-    &__item_sub:before
-      background-image: url("data:image/svg+xml,%3Csvg width='4' height='3' viewBox='0 0 4 3' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.97876 2.15932L0.109619 0.290283H3.8478C4.11489 0.290283 2.71306 1.53631 1.97876 2.15932Z' fill='black'/%3E%3C/svg%3E%0A")
-      .page-header .nav__item_sub:before
-        background-image: url("data:image/svg+xml,%3Csvg width='5' height='3' viewBox='0 0 5 3' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M2.65601 2.15932L0.786865 0.290283H4.52505C4.79214 0.290283 3.39031 1.53631 2.65601 2.15932Z' fill='%230B7CD3'/%3E%3C/svg%3E%0A")
-    &__sub
-      opacity: 0
-      position: absolute
-      right: 0
-      top: 50px
-      width: 725px
-      background-color: #0B7CD3
-      box-shadow: 0px 20px 20px rgba(0, 0, 0, 0.05)
-      -webkit-border-radius: 3px
-      -moz-border-radius: 3px
-      border-radius: 3px
-      padding: 25px 40px
-      box-sizing: border-box
-      z-index: -1
-      line-height: 1
-      transition: .3s all ease-in-out
-      &.show
-        opacity: 1
-        z-index: 15
-      &_link
-        color: #fff
-        font-size: 13px
-        font-family: 'mont-regular', serif
-        text-decoration: none
-        line-height: 40px
-
-  .logo__caption
-    color: #252525
-
+.opportunities
+  padding-top: 160px
 //sidebar
 .sidebar
   grid-column: 1/4
   &.in-fix
-    top: 160px
+    top: 120px
     position: fixed
   &__nav
     &_wr
@@ -482,8 +488,8 @@ img
   &__item
     padding: 0 15px
     box-sizing: border-box
-    flex: 0 0 30%
-    max-width: 30%
+    flex: 0 0 50%
+    max-width: 50%
   &__ttl
     font-family: 'mont-medium', Serif
     font-size: 25px
@@ -504,7 +510,100 @@ img
     color: #262626
     &:hover
       color: #0B7CD3
-
+.cases
+  padding-top: 160px
+  &__wr
+    flex-wrap: wrap
+  &__item
+    margin-bottom: 30px
+    padding: 0
+  &__btn
+    background-color: #0B7CD3
+    font-size: 14px
+    font-family: 'mont-medium', serif
+    width: 200px
+    height: 50px
+    display: flex
+    justify-content: center
+    align-items: center
+    -webkit-border-radius: 3px
+    -moz-border-radius: 3px
+    border-radius: 3px
+    color: #fff
+    border: 0
+    margin: 50px auto 0
+    text-decoration: none
+.case-in
+  &__wr
+    flex-direction: column
+    justify-content: space-between
+    -webkit-background-size: cover
+    background-size: cover
+    background-repeat: no-repeat
+    height: 675px
+    position: relative
+    box-sizing: border-box
+    padding: 100px 105px
+    &:before
+      content: ''
+      position: absolute
+      top: 0
+      left: 0
+      width: 100%
+      height: 100%
+      background-color: rgba(0,0,0,0.5)
+      display: block
+  &__info
+    color: #fff
+    font-family: 'mont-bold', serif
+    max-width: 50%
+    z-index: 10
+  &__ttl
+    font-size: 28px
+    line-height: 40px
+    margin-bottom: 32px
+  &__subttl
+    font-size: 20px
+    line-height: 28px
+    margin-bottom: 42px
+  &__txt
+    font-family: 'got-medium'
+    font-size: 16px
+    line-height: 25px
+  &__btns
+    z-index: 10
+    justify-content: space-between
+.cases2
+  &__item
+    flex-direction: column
+    justify-content: center
+    height: 240px
+    position: relative
+    padding: 0 80px
+    box-sizing: border-box
+    margin-bottom: 15px
+    background-repeat: no-repeat
+    background-size: cover
+    &:before
+      content: ''
+      position: absolute
+      top: 0
+      left: 0
+      width: 100%
+      height: 100%
+      background-color: rgba(0,0,0,0.5)
+  &__info
+    color: #fff
+    font-family: 'mont-bold', serif
+    max-width: 50%
+    z-index: 10
+  &__ttl
+    font-size: 28px
+    line-height: 40px
+    margin-bottom: 32px
+  &__subttl
+    font-size: 20px
+    line-height: 28px
 .footer
   background-color: #252525
   padding: 30px 0
@@ -554,7 +653,7 @@ img
     top: 0
     right: 0
     bottom: 0
-    z-index: 4
+    z-index: 150
     background-color: #016EC0
     display: flex
     justify-content: center
@@ -591,7 +690,7 @@ img
     top: 20px
 //mobile menu
 .menu
-  position: absolute
+  position: fixed
   top: 0
   right: -100%
   background-color: #0D3F65
@@ -604,7 +703,7 @@ img
   display: flex
   flex-direction: column
   justify-content: space-between
-  z-index: 10
+  z-index: 120
   display: none
   &__top
     align-items: center
@@ -660,11 +759,48 @@ img
         display: block
   .sidebar__social
     justify-content: center
-
 .menu-open
   height: 100vh
   overflow: hidden
 .menu-open .menu
   right: 0
+.back
+  display: flex
+  align-items: center
+  margin-bottom: 25px
+  text-decoration: none
+  &__txt
+    color: #5F5F5F
+    font-size: 16px
+    font-family: 'got-regular', serif
+    line-height: 50px
+    display: block
+    margin-left: 20px
+.breadcrumbs
+  grid-column: 5/13
+  margin-bottom: 25px
+  line-height: 50px
+  &__wr
+    display: flex
+  &__item
+  &__link
+    color: #0B7CD3
+    text-decoration: none
+    display: flex
+    align-items: center
+    &:hover
+      text-decoration: underline
+    &_active
+      color: #5F5F5F
+      cursor: default
+    &:after
+      content: ''
+      width: 5px
+      height: 7px
+      background-image: url("data:image/svg+xml,%3Csvg width='5' height='7' viewBox='0 0 5 7' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.34912 0.687988L3.86719 3.20605L1.34912 5.72412' stroke='%235F5F5F'/%3E%3C/svg%3E%0A")
+      background-repeat: no-repeat
+      display: block
+      margin: 0 15px
 
     
+

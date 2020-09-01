@@ -4,30 +4,37 @@ import 'animation.gsap'
 import 'debug.addIndicators'
 
 
-(function ($) {
-    let tl0 = new TimelineMax()
 
-    // Init ScrollMagic
-    var ctrl = new ScrollMagic.Controller({
-        globalSceneOptions: {
-            triggerHook: 'onLeave',
-        }
-    });
+let ctrl = new ScrollMagic.Controller({
+    globalSceneOptions: {
+        triggerHook: 'onLeave'
+    }
+});
+
+// Create scene
+$("#one").each(function() {
+
+    let name = $(this).attr('id');
+
+    new ScrollMagic.Scene({
+        triggerElement: this
+    })
+        .setPin(this)
+        .loglevel(3)
+        .addTo(ctrl);
+
+    // Get window height
+    let wh = window.innerHeight;
+
+    new ScrollMagic.Scene({
+        offset: wh*1
+    })
+        .setClassToggle("header", "page-header")
+        .addTo(ctrl);
+
+});
 
 
-    // Создаем сцену
-    $("#one").each(function () {
-
-        new ScrollMagic.Scene({
-            triggerElement: this
-        })
-            .setPin(this)
-            .addTo(ctrl);
-
-    });
-
-
-})(jQuery);
 
 $(function () {
     let tl0 = new TimelineMax();

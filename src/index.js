@@ -2,6 +2,7 @@
 //import * as $ from 'jquery'
 import 'slick-carousel/slick/slick.min';
 import '@fancyapps/fancybox'
+import 'malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min'
 import 'jquery-ui/ui/widgets/accordion'
 
 import './js/app'
