@@ -22,7 +22,7 @@
         </div>
     </div>
 </div>
-<header class="header page-header">
+<header class="header page-header" id="header">
     <div class="container">
         <div class="first__head">
             <div class="logo d-flex">
@@ -42,7 +42,7 @@
             </div>
             <nav class="nav nav_top">
                 <ul class="nav__wrapper d-flex">
-                    <li class="nav__item nav__item_sub nav__item_active js-open-sub"><a href="" class="nav__link">Компания</a>
+                    <li class="nav__item nav__item_sub nav__item_sub_active js-open-sub"><a href="" class="nav__link">Компания</a>
                         <ul class="nav__sub">
                             <li class="nav__sub_item"><a class="nav__sub_link" href="">Профайл</a></li>
                             <li class="nav__sub_item">
@@ -56,7 +56,7 @@
                     <li class="nav__item nav__item_sub js-open-sub">
                         <a href="" class="nav__link">Опыт</a>
                         <ul class="nav__sub">
-                            <li class="nav__sub_item"><a class="nav__sub_link" href="">Профайл</a></li>
+                            <li class="nav__sub_item"><a class="nav__sub_link" href=""></a></li>
                             <li class="nav__sub_item"><a class="nav__sub_link" href="">Сертификаты и лицензии</a>
                             </li>
                             <li class="nav__sub_item"><a class="nav__sub_link" href="">Партнеры и статусы</a></li>
@@ -67,8 +67,8 @@
                     <li class="nav__item nav__item_sub js-open-sub">
                         <a href="" class="nav__link">Пресс-центр</a>
                         <ul class="nav__sub">
-                            <li class="nav__sub_item"><a class="nav__sub_link" href="">1</a></li>
-                            <li class="nav__sub_item"><a class="nav__sub_link" href="">2 и лицензии</a>
+                            <li class="nav__sub_item"><a class="nav__sub_link" href="">Профайл</a></li>
+                            <li class="nav__sub_item"><a class="nav__sub_link" href="">Лицензии</a>
                             </li>
                             <li class="nav__sub_item"><a class="nav__sub_link" href="">Партнеры и статусы</a></li>
                             <li class="nav__sub_item"><a class="nav__sub_link" href="">Отзывы заказчиков</a></li>
@@ -96,28 +96,25 @@
 </header>
 <section class="case-in section-in">
     <div class="container">
-        <a href="" class="back">
-            <div>
-                <svg width="58" height="8" viewBox="0 0 58 8">
-                    <use xlink:href="#icon-back"></use>
-                </svg>
-            </div>
-            <span class="back__txt">Назад</span>
-        </a>
-        <div class="breadcrumbs">
-            <ul class="breadcrumbs__wr">
-                <li class="breadcrumbs__item">
-                    <a class="breadcrumbs__link breadcrumbs__link_home" href="">Главная</a>
-                </li>
-                <li class="breadcrumbs__item">
-                    <a class="breadcrumbs__link breadcrumbs__link" href="">Кейсы</a>
-                </li>
-                <li class="breadcrumbs__item">
-                    <span class="breadcrumbs__link_active" href="">МГРТ</span>
-                </li>
-            </ul>
-        </div>
         <div class="sidebar fixed-block" id="aside1">
+            <div class="logo d-flex">
+                <div class="logo_blue">
+                    <svg width="68" height="99" viewBox="0 0 68 99">
+                        <use xlink:href="#logo-blue"></use>
+                    </svg>
+                </div>
+                <div class="logo__caption">геолайн <br>
+                    технологии
+                </div>
+            </div>
+            <a href="" class="back">
+                <div>
+                    <svg width="58" height="8" viewBox="0 0 58 8">
+                        <use xlink:href="#icon-back"></use>
+                    </svg>
+                </div>
+                <span class="back__txt">Назад</span>
+            </a>
             <div class="title">Наши компетенции</div>
             <div class="sidebar__nav">
                 <ul class="sidebar__nav_wr sidebar__nav_wr_top">
@@ -160,6 +157,19 @@
             </div>
         </div>
         <div class="content">
+            <div class="breadcrumbs">
+                <ul class="breadcrumbs__wr">
+                    <li class="breadcrumbs__item">
+                        <a class="breadcrumbs__link breadcrumbs__link_home" href="">Главная</a>
+                    </li>
+                    <li class="breadcrumbs__item">
+                        <a class="breadcrumbs__link breadcrumbs__link" href="">Кейсы</a>
+                    </li>
+                    <li class="breadcrumbs__item">
+                        <span class="breadcrumbs__link_active" href="">МГРТ</span>
+                    </li>
+                </ul>
+            </div>
             <div class="case-in__wr d-flex" style="background-image: url('./assets/img/ci-01.png');">
                 <div class="case-in__info">
                     <div class="case-in__ttl">МГРТ</div>
@@ -187,6 +197,14 @@
 <div class="stop"></div>
 <footer class="footer" id="footer">
     <div class="container">
+        <div class="footer__item footer__logo d-flex">
+            <svg class="footer__logo_img" width="47" height="68" viewBox="0 0 47 68">
+                <use xlink:href="#logo-blue"></use>
+            </svg>
+            <div class="logo__caption">геолайн <br>
+                технологии
+            </div>
+        </div>
         <div class="footer__item footer__copy">
             <div class="footer__logo only-mobile">
                 <svg width="47" height="68" viewBox="0 0 47 68">

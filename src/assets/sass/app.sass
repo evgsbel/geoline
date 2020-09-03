@@ -71,6 +71,19 @@ body
   font-size: 16px
   font-family: 'mont-medium', serif
   background-color: #F8F8F8
+a
+  text-decoration: underline
+  color: #0B7CD3
+  font-family: 'got-regular'
+  &:hover
+    text-decoration: none
+p
+  font-size: 16px
+  color: #5F5F5F
+  line-height: 25px
+  margin: 0 0 35px 0
+  display: block
+  font-family: 'got-regular',serif
 ul
   list-style: none
   margin: 0
@@ -99,7 +112,7 @@ ul
 img
   max-width: 100%
 .section-in
-  padding-top: 160px
+
 //header
 .header
   position: fixed
@@ -417,7 +430,6 @@ img
   position: absolute
   top: 0
   padding-bottom: 60px
-  padding-top: 30px
   &:before
     content: ''
     height: 100%
@@ -428,8 +440,7 @@ img
     z-index: 10
     top: 0
   .logo
-    height: 90px
-    margin-bottom: 70px
+    margin-bottom: 60px
   .logo__caption
     color: #252525
   &__nav
@@ -488,25 +499,6 @@ img
       font-family: 'mont-medium', serif
       color: #252525
       margin-bottom: 20px
-    ul
-      li
-        position: relative
-        color: #262626
-        padding-left: 50px
-        color: #262626
-        font-family: 'got-regular'
-        font-size: 14px
-        line-height: 35px
-        &:before
-          content: ''
-          display: block
-          width: 20px
-          height: 2px
-          background-color: #999999
-          background-repeat: no-repeat
-          position: absolute
-          left: 0
-          top: 44%
     &_design
       background-repeat: no-repeat
       &_right
@@ -520,6 +512,26 @@ img
   &__flex
     justify-content: flex-end
     margin-right: 50px
+.line-list
+  li
+    position: relative
+    color: #262626
+    padding-left: 50px
+    color: #262626
+    font-family: 'got-regular'
+    font-size: 14px
+    line-height: 20px
+    margin-bottom: 1.5em
+    &:before
+      content: ''
+      display: block
+      width: 20px
+      height: 2px
+      background-color: #999999
+      background-repeat: no-repeat
+      position: absolute
+      left: 0
+      top: 44%
 
 .case
   padding: 90px 0 90px 87px
@@ -576,7 +588,7 @@ img
     border-radius: 3px
     color: #fff
     border: 0
-    margin: 50px auto 0
+    margin: 50px auto
     text-decoration: none
 .case-in
   &__wr
@@ -839,7 +851,6 @@ img
   line-height: 50px
   &__wr
     display: flex
-  &__item
   &__link
     color: #0B7CD3
     text-decoration: none
@@ -859,5 +870,264 @@ img
       display: block
       margin: 0 15px
 
-    
+.news
+  &__wr
+    display: flex
+    justify-content: space-between
+  &__last
+    width: 355px
+    max-width: 100%
+    margin-right: 80px
+  &__last-list
+    &__item
+      display: block
+      font-size: 16px
+      margin-bottom: 2em
+      font-family: 'mont-medium', serif
+      color: #5F5F5F
+      transition: .3s all ease-in
+      text-decoration: none
+      &:hover
+        color: #0B7CD3
+  &__list
+    width: 650px
+    max-width: 100%
+  &__list-year
+    display: flex
+    justify-content: space-between
+    align-items: flex-end
+    margin-bottom: 35px
+    &__item
+      color: #5F5F5F
+      font-size: 16px
+      font-family: 'mont-medium'
+      text-decoration: none
+      transition: .3s all ease-in-out
+      &_active, &:hover
+        color: #0B7CD3
+        transform: scale(1.5)
+  &__list-month
+    display: flex
+    flex-wrap: wrap
+    margin-bottom: 70px
+    &__item
+      margin-right: 9px
+      margin-bottom: 10px
+      width: 13%
+      height: 30px
+      display: flex
+      align-items: center
+      justify-content: center
+      border-radius: 3px
+      border: 0
+      cursor: pointer
+      transition: .3s all ease-in-out
+      font-size: 14px
+      font-family: 'mont-medium', serif
+      &_white
+        background-color: #fff
+        color: #5F5F5F
+      &_grey
+        background-color: #FAFAFA
+        color: #CACACA
+      &_active, &:hover
+        background-color: #0B7CD3
+        color: #fff
+      &:nth-child(7), &:last-child
+        margin-right: 0
+  &__item
+    background-color: #fff
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    padding: 25px 25px 30px 38px
+    box-sizing: border-box
+    margin-bottom: 20px
+    &_date
+      color: #5F5F5F
+      font-size: 14px
+      font-family: 'got-regular'
+      margin-bottom: 2.5em
+    &_name
+      font-size: 20px
+      color: #262626
+      font-family: 'mont-medium', serif
+      text-decoration: none
+      margin-bottom: 2em
+      transition: .3s all ease-in-out
+      svg
+        stroke: #1F1F1F
+        width: 22px
+        height: 12px
+        transition: .3s all ease-in-out
+        margin-right: 10px
+      &:hover
+        color: #0B7CD3
+        svg
+          stroke: #0B7CD3
+          width: 42px
+    &_intro
+      color: #1F1F1F
+      line-height: 25px
+      font-family: 'got-regular'
+.news-inner
+  &__date
+    color: #5F5F5F
+    font-family: 'mont-medium', Serif
+    font-size: 14px
+    margin-bottom: 2.5em
+  &__content
+    margin-bottom: 102px
+  &__subttl
+    color: #000
+    font-size: 20px
+    margin-bottom: 30px
+    font-family: 'mont-medium', serif
+  &__footnote
+    position: absolute
+    top: 10%
+    max-width: 62.5%
+    background-color: #F8F8F8
+    padding: 25px 0 25px 50px
+    p
+      margin-bottom: 25px
+  &__design
+    position: relative
+    &_right
+      img
+        display: block
+        margin-left: auto
+      .news-inner__footnote
+          left: 5px
+    &_left
+      .news-inner__footnote
+        left: 30%
+  .mt-minus
+    margin-top: -25px
+
+.contacts
+  &__wr
+    display: flex
+    justify-content: space-between
+    margin-bottom: 100px
+    position: relative
+  &__item
+    background-color: #fff
+    display: flex
+    flex-direction: column
+    justify-content: center
+    padding-left: 50px
+    box-sizing: border-box
+    height: 644px
+    width: 49%
+
+  &__name
+    font-family: 'mont-medium', Serif
+    font-size: 20px
+    color: #1D2022
+  &__info
+    margin: 25px 0 45px
+    line-height: 22px
+    max-width: 50%
+    &_item
+      margin-bottom: 15px
+      font-family: 'got-regular'
+      span
+        font-family: 'got-medium'
+        color: #5F5F5F
+      a
+        font-family: 'got-regular'
+  &__link
+    color: #5F5F5F
+    text-decoration: underline
+    cursor: pointer
+    &:first-child
+      margin-right: 30px
+.map
+  position: absolute
+  top: -100%
+  background-color: #0D3F65
+  opacity: 0
+  box-shadow: 0 20px 20px rgba(0, 0, 0, 0.08)
+  padding: 30px
+  transition: all 1.5s cubic-bezier(0.23, 1, 0.32, 1)
+  z-index: -1
+  width: 49%
+  box-sizing: border-box
+  &.is-active
+    z-index: 10
+    height: 100%
+    opacity: 1
+    top: 0
+    &_right
+      right: 0
+    &_left
+      left: 0
+.feedback
+  background-color: #fff
+  grid-column: 5/13
+  padding-top: 60px
+  padding-bottom: 70px
+  box-sizing: border-box
+  position: relative
+  &:before, &:after
+    content: ''
+    background-color: #fff
+    height: 100%
+    width: 90px
+    position: absolute
+    top: 0
+  &:before
+    left: -90px
+  &:after
+    right: -90px
+.form
+  &__wr
+    justify-content: space-between
+  &__item
+    border: 1px solid #E0E0E0
+    -webkit-border-radius: 5px
+    -moz-border-radius: 5px
+    border-radius: 5px
+    height: 41px
+    padding-left: 20px
+    box-sizing: border-box
+    color: #000
+    font-size: 14px
+    font-family: 'mont-regular', serif
+    &::placeholder
+      color: #000
+      font-size: 14px
+      font-family: 'mont-regular', serif
+    &:active, &:focus
+      outline: none
+      border: 1px solid #0B7CD3
+  &__input
+    margin-bottom: 30px
+    width: 32%
+    max-width: 100%
+  &__textarea
+    width: 100%
+    height: 75px
+    margin-bottom: 50px
+    padding-top: 15px
+  &__submit
+    background-color: #0B7CD3
+    color: #fff
+    -webkit-border-radius: 3px
+    -moz-border-radius: 3px
+    border-radius: 3px
+    width: 200px
+    height: 50px
+    display: block
+    margin: 0 auto
+    font-size: 14px
+    font-family: 'mont-medium', Serif
+    display: flex
+    align-items: center
+    justify-content: center
+    border: 0
+    &:active, &:focus
+      outline: none
+      border: 0
 

@@ -54,8 +54,8 @@ $(function () {
     tl1
         .fromTo('.footer__logo', .9, {x: -100, opacity: 0}, {x: 0, opacity: 1}, 0.5)
         const scene4p2 = new ScrollMagic.Scene({
-            triggerElement: ".case",
-            triggerHook: 0.6,
+            triggerElement: ".footer",
+            triggerHook: 1,
             // reverse: false,
         })
             .setTween(tl1)

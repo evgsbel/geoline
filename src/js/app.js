@@ -112,6 +112,14 @@ $(() => {
         $('.js-open-mobile-sub').find('.sub__menu_mobile').slideUp(400)
         $(this).find('.sub__menu_mobile').slideToggle(400)
     })
+    $('.js-open-map-right').on('click', function openMapRight() {
+        $(this).removeAttr('href')
+        $(this).closest('.contacts__item').find('.map').toggleClass('is-active is-active_right')
+    })
+    $('.js-open-map-left').on('click', function openMapLeft() {
+        $(this).removeAttr('href')
+        $(this).closest('.contacts__item').find('.map').toggleClass('is-active is-active_left')
+    })
 });
 
 
