@@ -111,16 +111,19 @@ img
   max-width: 100% 
   height: 92px
   z-index: 100
+  display: flex
+  align-items: center
   .logo_blue
     display: none
 //page-header
 .page-header
-  margin-bottom: 90px
-  background-color: #fff
-  .logo_white
+  //background-color: #F8F8F8
+  .logo
     display: none
-  .logo_blue
-    display: block
+  //.logo_white
+  //  display: none
+  //.logo_blue
+  //  display: block
   .top-phone
     display: none
   .nav
@@ -128,12 +131,16 @@ img
     position: relative
     &__link
       color: #2F2F2F
-    &__item:hover .nav__link, .nav__item_active .nav__link
+    &__item:hover .nav__link
       color: #0B7CD3
-    &__item_sub:before
-      background-image: url("data:image/svg+xml,%3Csvg width='4' height='3' viewBox='0 0 4 3' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.97876 2.15932L0.109619 0.290283H3.8478C4.11489 0.290283 2.71306 1.53631 1.97876 2.15932Z' fill='black'/%3E%3C/svg%3E%0A")
-      .page-header .nav__item_sub:before
+    &__item_sub
+      &:after
+        background-image: url("data:image/svg+xml,%3Csvg width='4' height='3' viewBox='0 0 4 3' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.97876 2.15932L0.109619 0.290283H3.8478C4.11489 0.290283 2.71306 1.53631 1.97876 2.15932Z' fill='black'/%3E%3C/svg%3E%0A")
+      &_active .nav__link, &:hover .nav__link
+        color: #0B7CD3
+      &_active:after, &:hover:after
         background-image: url("data:image/svg+xml,%3Csvg width='5' height='3' viewBox='0 0 5 3' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M2.65601 2.15932L0.786865 0.290283H4.52505C4.79214 0.290283 3.39031 1.53631 2.65601 2.15932Z' fill='%230B7CD3'/%3E%3C/svg%3E%0A")
+        background-repeat: no-repeat
     &__sub
       &_item
         background-color: #0B7CD3
@@ -196,25 +203,30 @@ img
     display: flex
     align-items: center
     cursor: pointer
-    &_sub:after
-      content: ''
-      display: block
-      background-image: url("data:image/svg+xml,%3Csvg width='5' height='2' viewBox='0 0 5 2' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M2.68506 1.92456L0.815918 0.0555191H4.5541C4.82119 0.0555191 3.41936 1.30155 2.68506 1.92456Z' fill='%2378C0FF'/%3E%3C/svg%3E%0A")
-      background-repeat: no-repeat
-      width: 5px
-      height: 2px
-      margin-left: 10px
-    &:hover, &_active
-      &:before
-        background-image: url("data:image/svg+xml,%3Csvg width='5' height='2' viewBox='0 0 5 2' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M2.27979 1.92456L0.410645 0.0555191H4.14883C4.41591 0.0555191 3.01409 1.30155 2.27979 1.92456Z' fill='white'/%3E%3C/svg%3E%0A")
-      .nav__link
-        color: #fff
+    &_sub
+      &:after
+        content: ''
+        display: block
+        background-image: url("data:image/svg+xml,%3Csvg width='5' height='2' viewBox='0 0 5 2' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M2.68506 1.92456L0.815918 0.0555191H4.5541C4.82119 0.0555191 3.41936 1.30155 2.68506 1.92456Z' fill='%2378C0FF'/%3E%3C/svg%3E%0A")
+        background-repeat: no-repeat
+        width: 5px
+        height: 2px
+        margin-left: 10px
+        padding-bottom: 5px
+      &:hover, &_active
+        &:after
+          background-image: url("data:image/svg+xml,%3Csvg width='5' height='2' viewBox='0 0 5 2' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M2.27979 1.92456L0.410645 0.0555191H4.14883C4.41591 0.0555191 3.01409 1.30155 2.27979 1.92456Z' fill='white'/%3E%3C/svg%3E%0A")
+        .nav__link
+          color: #fff
   &__link
     color: #78C0FF
     font-family: 'mont-regular', serif
     font-size: 15px
     text-decoration: none
     transition: .5s all ease-in-out
+    padding-bottom: 10px
+    &:hover
+      color: #fff
   &__sub
     height: 0
     overflow: hidden
@@ -222,11 +234,10 @@ img
     transition: all 0.5s ease-in
     position: absolute
     width: 725px
-    top: 0
+    top: 20px
     right: 0
     box-shadow: 0px 20px 20px rgba(0, 0, 0, 0.05)
     border-radius: 3px
-    padding-top: 30px
     box-sizing: border-box
     z-index: 1000
     &_item
@@ -393,13 +404,34 @@ img
           width: 53px
 
 .opportunities
-  padding-top: 160px
+  .container
+    position: static
 //sidebar
-.sidebar
+.sticky-wrapper
   grid-column: 1/4
-  &.in-fix
-    top: 120px
-    position: fixed
+.sidebar
+  background-color: #fff
+  max-width: 100%
+  width: 400px
+  padding-right: 100px
+  position: absolute
+  top: 0
+  padding-bottom: 60px
+  padding-top: 30px
+  &:before
+    content: ''
+    height: 100%
+    width: 100px
+    left: -100px
+    background-color: #fff
+    position: absolute
+    z-index: 10
+    top: 0
+  .logo
+    height: 90px
+    margin-bottom: 70px
+  .logo__caption
+    color: #252525
   &__nav
     &_wr
       &_top
@@ -409,7 +441,7 @@ img
     &_item
       margin-bottom: 15px
     &_link
-      font-family: 'Arial', serif
+      font-family: 'mont-medium', serif
       color: #5F5F5F
       font-size: 18px
       text-decoration: none
@@ -441,9 +473,16 @@ img
 //content
 .content
   grid-column: 5/13
+  padding-top: 160px
+  .title_top
+    padding-left: 87px
+  .accordeon__wr
+    padding-left: 87px
   &__in
     margin-top: 30px
     margin-bottom: 90px
+    background-color: transparent
+    padding-left: 87px
     .title
       font-size: 25px
       font-family: 'mont-medium', serif
@@ -473,7 +512,7 @@ img
       &_right
         background-position: right top
       &_left
-        background-position: left top
+        background-position: 87px top
         .title
           text-align: center
           margin-right: 50px
@@ -483,13 +522,19 @@ img
     margin-right: 50px
 
 .case
+  padding: 90px 0 90px 87px
+  box-sizing: border-box
+  background-color: #fff
   &__wrapper
     justify-content: space-between
   &__item
-    padding: 0 15px
     box-sizing: border-box
-    flex: 0 0 50%
-    max-width: 50%
+    flex: 0 0 33.3%
+    max-width: 33.3%
+  .slick-slide
+    padding: 0 27px
+  .slick-list
+    padding: 0 -27px
   &__ttl
     font-family: 'mont-medium', Serif
     font-size: 25px
@@ -604,12 +649,24 @@ img
   &__subttl
     font-size: 20px
     line-height: 28px
+.mCS-dark-thick.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar
+  height: 3px
+  background-color: #0B7CD3
+.mCSB_scrollTools_horizontal.mCSB_scrollTools_onDrag_expand .mCSB_dragger.mCSB_dragger_onDrag_expanded .mCSB_dragger_bar, .mCSB_scrollTools_horizontal.mCSB_scrollTools_onDrag_expand .mCSB_draggerContainer:hover .mCSB_dragger .mCSB_dragger_bar, .mCS-dark-thick.mCSB_scrollTools .mCSB_dragger:active .mCSB_dragger_bar, .mCS-dark-thick.mCSB_scrollTools .mCSB_dragger.mCSB_dragger_onDrag .mCSB_dragger_bar
+  height: 5px
+  background-color: #0B7CD3
+.mCustomScrollBox + .mCSB_scrollTools.mCSB_scrollTools_horizontal, .mCustomScrollBox + .mCSB_scrollTools + .mCSB_scrollTools.mCSB_scrollTools_horizontal
+  bottom: -60px
+.mCS-dark-thick.mCSB_scrollTools .mCSB_draggerRail
+  display: none
 .footer
   background-color: #252525
   padding: 30px 0
-  margin-top: 130px
   position: relative
-  bottom: -40px
+  z-index: 30
+  &__logo
+    grid-column: 1/4
+    align-items: center
   &__item
     a, p
       line-height: 25px

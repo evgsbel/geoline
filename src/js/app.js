@@ -87,25 +87,9 @@ $(() => {
     function checkWidth() {
         let windowWidth = $('body').innerWidth()
         if (windowWidth > 769) {
-            $(function () {
-                var topPos = $('#aside1').offset().top;
-
-                $(window).scroll(function () {
-                    let top = $(document).scrollTop(),
-                        pip = $('.stop').offset().top,
-                        height = $('#aside1').outerHeight();
-                    if (top > topPos && top < pip - height) {
-                        $('#aside1').addClass('in-fix').removeAttr("style");
-                    } else if (top > pip - height) {
-                        $('#aside1').removeClass('in-fix').css({'position': 'absolute', 'bottom': '0'});
-                    } else {
-                        $('#aside1').removeClass('in-fix');
-                    }
-                });
-            });
+            $("#aside1").sticky({topSpacing: 0, bottomSpacing: 158});
         }
     }
-
     checkWidth();
     $(window).resize(function () {
         checkWidth(); // проверит при изменении размера окна клиента
@@ -136,7 +120,6 @@ $(() => {
     $("a.js-ancor-link").click(function () {
         let elementClick = $(this).attr("href")
         let destination = $(elementClick).offset().top
-
         jQuery("html:not(:animated),body:not(:animated)").animate({scrollTop: destination}, 800);
         console.log(destination)
         return false;
@@ -149,25 +132,26 @@ $('.js-case-slider').slick({
     slidesToScroll: 1,
     dots: false,
     infinite: false,
+    prevArrow: $('.slick-prev'),
+    nextArrow: $('.slick-next'),
     responsive: [
         {
-            breakpoint: 1024,
+            breakpoint: 1367,
             settings: {
                 slidesToShow: 3,
                 slidesToScroll: 3,
                 infinite: true,
-                dots: true
             }
         },
         {
-            breakpoint: 600,
+            breakpoint: 1281,
             settings: {
                 slidesToShow: 2,
-                slidesToScroll: 2
+                slidesToScroll: 3,
             }
         },
         {
-            breakpoint: 480,
+            breakpoint: 481,
             settings: {
                 slidesToShow: 1,
                 slidesToScroll: 1
@@ -184,6 +168,6 @@ $(window).on('load', function () {
         advanced: {autoExpandHorizontalScroll: true},
         updateOnContentResize: true,
         scrollbarPosition: 'outside',
-        scrollInertia: 200
+        scrollInertia: 200,
     });
 });

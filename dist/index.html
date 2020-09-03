@@ -6,7 +6,7 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Geoline</title>
-<link href="assets/css/vendors.6197de6a3b13ccb3dbe2.css" rel="stylesheet"><link href="assets/css/app.6197de6a3b13ccb3dbe2.css" rel="stylesheet"></head>
+<link href="assets/css/vendors.cef74417e2a7f6e3268a.css" rel="stylesheet"><link href="assets/css/app.cef74417e2a7f6e3268a.css" rel="stylesheet"></head>
 
 <body>
 <div class="preloader__wrp">
@@ -23,7 +23,7 @@
         </div>
     </div>
 </div>
-<header class="header">
+<header class="header" id="header">
     <div class="container">
         <div class="first__head">
             <div class="logo d-flex">
@@ -43,7 +43,7 @@
             </div>
             <nav class="nav nav_top">
                 <ul class="nav__wrapper d-flex">
-                    <li class="nav__item nav__item_sub nav__item_active js-open-sub"><a href="" class="nav__link">Компания</a>
+                    <li class="nav__item nav__item_sub nav__item_sub_active js-open-sub"><a href="" class="nav__link">Компания</a>
                         <ul class="nav__sub">
                             <li class="nav__sub_item"><a class="nav__sub_link" href="">Профайл</a></li>
                             <li class="nav__sub_item">
@@ -57,7 +57,7 @@
                     <li class="nav__item nav__item_sub js-open-sub">
                         <a href="" class="nav__link">Опыт</a>
                         <ul class="nav__sub">
-                            <li class="nav__sub_item"><a class="nav__sub_link" href="">Профайл</a></li>
+                            <li class="nav__sub_item"><a class="nav__sub_link" href=""></a></li>
                             <li class="nav__sub_item"><a class="nav__sub_link" href="">Сертификаты и лицензии</a>
                             </li>
                             <li class="nav__sub_item"><a class="nav__sub_link" href="">Партнеры и статусы</a></li>
@@ -68,8 +68,8 @@
                     <li class="nav__item nav__item_sub js-open-sub">
                         <a href="" class="nav__link">Пресс-центр</a>
                         <ul class="nav__sub">
-                            <li class="nav__sub_item"><a class="nav__sub_link" href="">1</a></li>
-                            <li class="nav__sub_item"><a class="nav__sub_link" href="">2 и лицензии</a>
+                            <li class="nav__sub_item"><a class="nav__sub_link" href="">Профайл</a></li>
+                            <li class="nav__sub_item"><a class="nav__sub_link" href="">Лицензии</a>
                             </li>
                             <li class="nav__sub_item"><a class="nav__sub_link" href="">Партнеры и статусы</a></li>
                             <li class="nav__sub_item"><a class="nav__sub_link" href="">Отзывы заказчиков</a></li>
@@ -277,15 +277,17 @@
 <section class="js-animate-section" id="two">
     <section class="opportunities">
         <div class="container">
-            <a href="" class="only-mobile back">
-                <div>
-                    <svg width="58" height="8" viewBox="0 0 58 8">
-                        <use xlink:href="#icon-back"></use>
-                    </svg>
-                </div>
-                <span class="back__txt">Назад</span>
-            </a>
             <div class="sidebar fixed-block" id="aside1">
+                <div class="logo d-flex">
+                    <div class="logo_blue">
+                        <svg width="68" height="99" viewBox="0 0 68 99">
+                            <use xlink:href="#logo-blue"></use>
+                        </svg>
+                    </div>
+                    <div class="logo__caption">геолайн <br>
+                        технологии
+                    </div>
+                </div>
                 <div class="title">Наши компетенции</div>
                 <div class="sidebar__nav">
                     <ul class="sidebar__nav_wr sidebar__nav_wr_top">
@@ -328,8 +330,8 @@
                 </div>
             </div>
             <div class="content">
-                <div class="title">Автоматизация производства</div>
-                <div class="js-ui-accordion">
+                <div class="title title_top">Автоматизация производства</div>
+                <div class="js-ui-accordion accordeon__wr">
                     <!--item-->
                     <div>Системы оперативного управления производственной деятельностью предприятия (MES)</div>
                     <div class="content__in">
@@ -429,7 +431,7 @@
 
                 <div class="case">
                     <div class="title">Кейсы, связанные с автоматизацией производсва</div>
-                    <div class=" case__wrapper js-case-slider ">
+                    <div class=" case__wrapper js-case-slider mcs-horizontal">
                         <div class="case__item">
                             <div class="case__ttl">ГБУ СО «СОЦИ»</div>
                             <div class="case__list">
@@ -495,45 +497,52 @@
             </div>
         </div>
     </section>
-    <div class="stop"></div>
-    <footer class="footer" id="footer">
-        <div class="container">
-            <div class="footer__item footer__copy">
-                <div class="footer__logo only-mobile">
-                    <svg width="47" height="68" viewBox="0 0 47 68">
-                        <use xlink:href="#logo-blue"></use>
-                    </svg>
+</section>
+<footer class="footer" id="footer">
+    <div class="container">
+        <div class="footer__item footer__logo d-flex">
+                <svg class="footer__logo_img" width="47" height="68" viewBox="0 0 47 68">
+                    <use xlink:href="#logo-blue"></use>
+                </svg>
+                <div class="logo__caption">геолайн <br>
+                    технологии
                 </div>
-                <div class="footer__copy_wr">
-                    <p>© 2011-2020 ГЕОЛАЙН Технологии</p>
-                    <a href="">Контактная информация</a>
-                </div>
+        </div>
+        <div class="footer__item footer__copy">
+            <div class="footer__logo only-mobile">
+                <svg width="47" height="68" viewBox="0 0 47 68">
+                    <use xlink:href="#logo-blue"></use>
+                </svg>
             </div>
-            <div class="footer__item footer__email">
-                <p>E-mail:</p>
-                <a href="mailto:info@geoline-tech.com">info@geoline-tech.com</a>
-            </div>
-            <div class="footer__item footer__adress">
-                <p>193375, г. Санкт-Петербург, ул. Вербная, д.27, литера А, БЦ «Лайнер»</p>
-            </div>
-            <div class="footer__item footer__phone only-mobile">
-                <a href="tel:+78126400996" class="">+7 (812) 640 09 96</a>
-                <div class="sidebar__social d-flex">
-                    <a href="" class="sidebar__social_item">
-                        <svg width="9" height="17" viewBox="0 0 9 17">
-                            <use xlink:href="#fb"></use>
-                        </svg>
-                    </a>
-                    <a href="" class="sidebar__social_item">
-                        <svg width="19" height="19" viewBox="0 0 19 19">
-                            <use xlink:href="#in"></use>
-                        </svg>
-                    </a>
-                </div>
+            <div class="footer__copy_wr">
+                <p>© 2011-2020 ГЕОЛАЙН Технологии</p>
+                <a href="">Контактная информация</a>
             </div>
         </div>
-    </footer>
-</section>
+        <div class="footer__item footer__email">
+            <p>E-mail:</p>
+            <a href="mailto:info@geoline-tech.com">info@geoline-tech.com</a>
+        </div>
+        <div class="footer__item footer__adress">
+            <p>193375, г. Санкт-Петербург, ул. Вербная, д.27, литера А, БЦ «Лайнер»</p>
+        </div>
+        <div class="footer__item footer__phone only-mobile">
+            <a href="tel:+78126400996" class="">+7 (812) 640 09 96</a>
+            <div class="sidebar__social d-flex">
+                <a href="" class="sidebar__social_item">
+                    <svg width="9" height="17" viewBox="0 0 9 17">
+                        <use xlink:href="#fb"></use>
+                    </svg>
+                </a>
+                <a href="" class="sidebar__social_item">
+                    <svg width="19" height="19" viewBox="0 0 19 19">
+                        <use xlink:href="#in"></use>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </div>
+</footer>
 <div class="menu">
     <div class="d-flex menu__top">
         <div class="logo d-flex">
@@ -615,5 +624,5 @@
     </div>
 </div>
 <div class="svg-icons" id="svg-icons"></div>
-<script src="assets/js/vendors.6197de6a3b13ccb3dbe2.js"></script><script src="assets/js/app.6197de6a3b13ccb3dbe2.js"></script></body>
+<script src="assets/js/vendors.cef74417e2a7f6e3268a.js"></script><script src="assets/js/app.cef74417e2a7f6e3268a.js"></script></body>
 </html>

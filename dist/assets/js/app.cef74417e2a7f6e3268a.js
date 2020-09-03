@@ -411,19 +411,22 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var malihu_custom_scrollbar_plugin_jquery_mCustomScrollbar_concat_min__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(malihu_custom_scrollbar_plugin_jquery_mCustomScrollbar_concat_min__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var jquery_ui_ui_widgets_accordion__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! jquery-ui/ui/widgets/accordion */ "./node_modules/jquery-ui/ui/widgets/accordion.js");
 /* harmony import */ var jquery_ui_ui_widgets_accordion__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(jquery_ui_ui_widgets_accordion__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _js_app__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./js/app */ "./src/js/app.js");
-/* harmony import */ var _js_app__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_js_app__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _js_accordeon__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./js/accordeon */ "./src/js/accordeon.js");
-/* harmony import */ var _js_accordeon__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_js_accordeon__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _js_scrollAnimations_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./js/scrollAnimations.js */ "./src/js/scrollAnimations.js");
-/* harmony import */ var _assets_sass_utils_libs_sass__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./assets/sass/utils/libs.sass */ "./src/assets/sass/utils/libs.sass");
-/* harmony import */ var _assets_sass_utils_libs_sass__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_assets_sass_utils_libs_sass__WEBPACK_IMPORTED_MODULE_7__);
-/* harmony import */ var _assets_sass_app_sass__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./assets/sass/app.sass */ "./src/assets/sass/app.sass");
-/* harmony import */ var _assets_sass_app_sass__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_assets_sass_app_sass__WEBPACK_IMPORTED_MODULE_8__);
-/* harmony import */ var _assets_sass_media_sass__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./assets/sass/media.sass */ "./src/assets/sass/media.sass");
-/* harmony import */ var _assets_sass_media_sass__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_assets_sass_media_sass__WEBPACK_IMPORTED_MODULE_9__);
+/* harmony import */ var jquery_sticky_jquery_sticky__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! jquery-sticky/jquery.sticky */ "./node_modules/jquery-sticky/jquery.sticky.js");
+/* harmony import */ var jquery_sticky_jquery_sticky__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(jquery_sticky_jquery_sticky__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _js_app__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./js/app */ "./src/js/app.js");
+/* harmony import */ var _js_app__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_js_app__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _js_accordeon__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./js/accordeon */ "./src/js/accordeon.js");
+/* harmony import */ var _js_accordeon__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_js_accordeon__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var _js_scrollAnimations_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./js/scrollAnimations.js */ "./src/js/scrollAnimations.js");
+/* harmony import */ var _assets_sass_utils_libs_sass__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./assets/sass/utils/libs.sass */ "./src/assets/sass/utils/libs.sass");
+/* harmony import */ var _assets_sass_utils_libs_sass__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_assets_sass_utils_libs_sass__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var _assets_sass_app_sass__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./assets/sass/app.sass */ "./src/assets/sass/app.sass");
+/* harmony import */ var _assets_sass_app_sass__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_assets_sass_app_sass__WEBPACK_IMPORTED_MODULE_9__);
+/* harmony import */ var _assets_sass_media_sass__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./assets/sass/media.sass */ "./src/assets/sass/media.sass");
+/* harmony import */ var _assets_sass_media_sass__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(_assets_sass_media_sass__WEBPACK_IMPORTED_MODULE_10__);
 // JS
 //import * as $ from 'jquery'
+
 
 
 
@@ -579,24 +582,9 @@ $(function () {
     var windowWidth = $('body').innerWidth();
 
     if (windowWidth > 769) {
-      $(function () {
-        var topPos = $('#aside1').offset().top;
-        $(window).scroll(function () {
-          var top = $(document).scrollTop(),
-              pip = $('.stop').offset().top,
-              height = $('#aside1').outerHeight();
-
-          if (top > topPos && top < pip - height) {
-            $('#aside1').addClass('in-fix').removeAttr("style");
-          } else if (top > pip - height) {
-            $('#aside1').removeClass('in-fix').css({
-              'position': 'absolute',
-              'bottom': '0'
-            });
-          } else {
-            $('#aside1').removeClass('in-fix');
-          }
-        });
+      $("#aside1").sticky({
+        topSpacing: 0,
+        bottomSpacing: 158
       });
     }
   }
@@ -639,22 +627,23 @@ $('.js-case-slider').slick({
   slidesToScroll: 1,
   dots: false,
   infinite: false,
+  prevArrow: $('.slick-prev'),
+  nextArrow: $('.slick-next'),
   responsive: [{
-    breakpoint: 1024,
+    breakpoint: 1367,
     settings: {
       slidesToShow: 3,
       slidesToScroll: 3,
-      infinite: true,
-      dots: true
+      infinite: true
     }
   }, {
-    breakpoint: 600,
+    breakpoint: 1281,
     settings: {
       slidesToShow: 2,
-      slidesToScroll: 2
+      slidesToScroll: 3
     }
   }, {
-    breakpoint: 480,
+    breakpoint: 481,
     settings: {
       slidesToShow: 1,
       slidesToScroll: 1
@@ -715,10 +704,11 @@ $("#one").each(function () {
   var wh = window.innerHeight;
   new ScrollMagic__WEBPACK_IMPORTED_MODULE_1___default.a.Scene({
     offset: wh * 1
-  }).setClassToggle("header", "page-header").addTo(ctrl);
+  }).setClassToggle("header", "page-header", "sidebar", "tesadkajsdlkajsdl").addTo(ctrl);
 });
 $(function () {
   var tl0 = new TimelineMax__WEBPACK_IMPORTED_MODULE_0___default.a();
+  var tl1 = new TimelineMax__WEBPACK_IMPORTED_MODULE_0___default.a();
   var controller = new ScrollMagic__WEBPACK_IMPORTED_MODULE_1___default.a.Controller();
   tl0.fromTo('.preloader__logo', .4, {
     x: 10,
@@ -747,10 +737,22 @@ $(function () {
     repeat: -1,
     yoyo: true
   }, 0);
+  tl1.fromTo('.footer__logo', .9, {
+    x: -100,
+    opacity: 0
+  }, {
+    x: 0,
+    opacity: 1
+  }, 0.5);
+  var scene4p2 = new ScrollMagic__WEBPACK_IMPORTED_MODULE_1___default.a.Scene({
+    triggerElement: ".case",
+    triggerHook: 0.6 // reverse: false,
+
+  }).setTween(tl1).addTo(controller);
 });
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js")))
 
 /***/ })
 
 /******/ });
-//# sourceMappingURL=app.6197de6a3b13ccb3dbe2.js.map
+//# sourceMappingURL=app.cef74417e2a7f6e3268a.js.map
