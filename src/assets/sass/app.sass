@@ -139,10 +139,15 @@ img
   //  display: none
   //.logo_blue
   //  display: block
+  .container
+    width: calc(100% - 597px)
+    background-color: #F8F8F8
+    height: 100%
+    margin: 0 0 0 auto
   .top-phone
     display: none
   .nav
-    grid-column: 9/13
+    grid-column: 7/12
     position: relative
     &__link
       color: #2F2F2F
@@ -417,21 +422,22 @@ img
         button
           background-color: #fff
           width: 53px
-
 .opportunities
   .container
     position: static
 //sidebar
 .sticky-wrapper
+  width: 497px
   grid-column: 1/4
 .sidebar
   background-color: #fff
   max-width: 100%
-  width: 400px
+  width: 497px
   padding-right: 100px
   position: absolute
   top: 0
   padding-bottom: 60px
+  box-sizing: border-box
   &:before
     content: ''
     height: 100%
@@ -487,15 +493,12 @@ img
 .content
   grid-column: 5/13
   padding-top: 160px
-  .title_top
-    padding-left: 87px
-  .accordeon__wr
-    padding-left: 87px
+  box-sizing: border-box
+  height: 100vh
   &__in
     margin-top: 30px
     margin-bottom: 90px
     background-color: transparent
-    padding-left: 87px
     .title
       font-size: 25px
       font-family: 'mont-medium', serif
@@ -506,7 +509,7 @@ img
       &_right
         background-position: right top
       &_left
-        background-position: 87px top
+        background-position: left top
         .title
           text-align: center
           margin-right: 50px
@@ -534,11 +537,23 @@ img
       position: absolute
       left: 0
       top: 44%
-
 .case
-  padding: 90px 0 90px 87px
+  padding: 90px 0
   box-sizing: border-box
   background-color: #fff
+  position: relative
+  grid-column: 5/13
+  &:before, &:after
+    content: ''
+    background-color: #fff
+    height: 100%
+    width: 90px
+    position: absolute
+    top: 0
+  &:before
+    left: -90px
+  &:after
+    right: -90px
   &__wrapper
     justify-content: space-between
   &__item
@@ -546,9 +561,7 @@ img
     flex: 0 0 33.3%
     max-width: 33.3%
   .slick-slide
-    padding: 0 27px
-  .slick-list
-    padding: 0 -27px
+    padding: 0 27px 0 0
   &__ttl
     font-family: 'mont-medium', Serif
     font-size: 25px
