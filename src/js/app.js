@@ -194,9 +194,9 @@ $(window).on('load', function () {
         scrollbarPosition: 'outside',
         scrollInertia: 200,
     });
-    $('.js-content-scroll').mCustomScrollbar({
-        axis: 'y',              // вертикальный скролл
-        scrollInertia: '1000',
-        scrollButtons:{ enable: false }
-    });
+    // $('.js-content-scroll').mCustomScrollbar({
+    //     axis: 'y',              // вертикальный скролл
+    //     scrollInertia: '1000',
+    //     scrollButtons:{ enable: false }
+    // });
 });

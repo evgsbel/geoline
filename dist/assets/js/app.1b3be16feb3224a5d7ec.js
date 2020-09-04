@@ -709,15 +709,11 @@ $(window).on('load', function () {
     updateOnContentResize: true,
     scrollbarPosition: 'outside',
     scrollInertia: 200
-  });
-  $('.js-content-scroll').mCustomScrollbar({
-    axis: 'y',
-    // вертикальный скролл
-    scrollInertia: '1000',
-    scrollButtons: {
-      enable: false
-    }
-  });
+  }); // $('.js-content-scroll').mCustomScrollbar({
+  //     axis: 'y',              // вертикальный скролл
+  //     scrollInertia: '1000',
+  //     scrollButtons:{ enable: false }
+  // });
 });
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js"), __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js")))
 
@@ -810,4 +806,4 @@ $(function () {
 /***/ })
 
 /******/ });
-//# sourceMappingURL=app.e284da16d0500d340e68.js.map
+//# sourceMappingURL=app.1b3be16feb3224a5d7ec.js.map
