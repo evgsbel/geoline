@@ -113,12 +113,28 @@ $(() => {
         $(this).find('.sub__menu_mobile').slideToggle(400)
     })
     $('.js-open-map-right').on('click', function openMapRight() {
+        let th = $(this);
         $(this).removeAttr('href')
         $(this).closest('.contacts__item').find('.map').toggleClass('is-active is-active_right')
+        $(this).closest('.contacts__wr').toggleClass('is-active')
+        $(this).toggleClass('is-active')
+        if (th.hasClass("is-active")) {
+            th.html("Скрыть карту");
+        } else {
+            th.html("Посмотреть на карте");
+        }
     })
     $('.js-open-map-left').on('click', function openMapLeft() {
+        let th = $(this);
         $(this).removeAttr('href')
         $(this).closest('.contacts__item').find('.map').toggleClass('is-active is-active_left')
+        $(this).closest('.contacts__wr').toggleClass('is-active')
+        $(this).toggleClass('is-active')
+        if (th.hasClass("is-active")) {
+            th.html("Скрыть карту");
+        } else {
+            th.html("Посмотреть на карте");
+        }
     })
 });
 

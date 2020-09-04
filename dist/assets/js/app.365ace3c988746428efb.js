@@ -630,12 +630,30 @@ $(function () {
     $(this).find('.sub__menu_mobile').slideToggle(400);
   });
   $('.js-open-map-right').on('click', function openMapRight() {
+    var th = $(this);
     $(this).removeAttr('href');
     $(this).closest('.contacts__item').find('.map').toggleClass('is-active is-active_right');
+    $(this).closest('.contacts__wr').toggleClass('is-active');
+    $(this).toggleClass('is-active');
+
+    if (th.hasClass("is-active")) {
+      th.html("Скрыть карту");
+    } else {
+      th.html("Посмотреть на карте");
+    }
   });
   $('.js-open-map-left').on('click', function openMapLeft() {
+    var th = $(this);
     $(this).removeAttr('href');
     $(this).closest('.contacts__item').find('.map').toggleClass('is-active is-active_left');
+    $(this).closest('.contacts__wr').toggleClass('is-active');
+    $(this).toggleClass('is-active');
+
+    if (th.hasClass("is-active")) {
+      th.html("Скрыть карту");
+    } else {
+      th.html("Посмотреть на карте");
+    }
   });
 }); //ancors
 
@@ -784,4 +802,4 @@ $(function () {
 /***/ })
 
 /******/ });
-//# sourceMappingURL=app.d5ca2c12b234335582a9.js.map
+//# sourceMappingURL=app.365ace3c988746428efb.js.map
