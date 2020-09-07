@@ -1,6 +1,5 @@
 //includes
 @import 'utils/font.sass'
-@import 'components/accordeon.sass'
 
 
 // animations
@@ -408,6 +407,12 @@ img
       border: 2px solid #fff
       transition: .3s all ease-in-out
       cursor: pointer
+      &:before
+        content: ''
+        transition: left .5s ease-out, width .5s ease-out
+        width: 53px
+        height: 15px
+        display: block
       &:hover
         background-color: #fff
         width: 53px
@@ -449,8 +454,11 @@ img
     top: 0
   .logo
     margin-bottom: 60px
+    svg
+      opacity: 0
   .logo__caption
     color: #252525
+    opacity: 0
   &__nav
     &_wr
       &_top
@@ -488,6 +496,12 @@ img
     font-size: 20px
     font-family: 'mont-bold', serif
     color: #1D2022
+.sidebar-start
+  .logo
+    svg
+      opacity: 1
+  .logo__caption
+    opacity: 1
 
 //content
 .content
@@ -537,6 +551,34 @@ img
       position: absolute
       left: 0
       top: 44%
+.js-ui-accordion
+  &_open
+    display: none
+  &_click
+    background-color: #fff
+    cursor: pointer
+    color: #262626
+    font-family: 'mont-medium', serif
+    padding: 18px 20px
+    border-radius: 3px
+    margin-bottom: 32px
+    position: relative
+    &:before
+      content: ''
+      width: 24px
+      height: 28px
+      background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3Csvg width='24' height='48' viewBox='0 -3.492 24 48' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M 8.23 -2.281 L 8.23 8.477 M 2.418 3.099 L 14.044 3.099' stroke='%230B7CD3' stroke-width='2' stroke-linecap='round' style=''/%3E%3Cpath d='M 2.355 14.295 L 14.045 14.295' stroke='white' stroke-width='2' stroke-linecap='round' style=''/%3E%3Cpath d='M7.89243 327L7.89243 340.785M1 333.892L14.7848 333.892' stroke='%230B7CD3' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E")
+      background-position: -2px 1px
+      background-repeat: no-repeat
+      display: block
+      position: absolute
+      right: 15px
+      top: 30%
+    &.is-active
+      background-color: #0B7CD3
+      color: #fff
+      &:before
+        background-position: 0px -9px
 .case
   padding: 90px 0
   box-sizing: border-box
@@ -672,13 +714,13 @@ img
   z-index: 30
   &__logo
     grid-column: 1/4
-    align-items: center
   &__item
     a, p
       line-height: 25px
       color: #fff
       font-size: 14px
       text-decoration: none
+      margin-bottom: 14px
     p:last-child
       line-height: 35px
   &__copy

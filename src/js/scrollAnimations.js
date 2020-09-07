@@ -29,9 +29,14 @@ $("#one").each(function() {
     new ScrollMagic.Scene({
         offset: wh*1
     })
-        .setClassToggle("header", "page-header", "sidebar", "tesadkajsdlkajsdl")
+        .setClassToggle("header", "page-header")
         .addTo(ctrl);
 
+    new ScrollMagic.Scene({
+        offset: wh*1
+    })
+        .setClassToggle(".sidebar", "sidebar-start")
+        .addTo(ctrl);
 });
 
 
@@ -39,6 +44,7 @@ $("#one").each(function() {
 $(function () {
     let tl0 = new TimelineMax();
     let tl1 = new TimelineMax();
+    let tl2 = new TimelineMax();
     const controller = new ScrollMagic.Controller();
     tl0
         .fromTo('.preloader__logo', .4, {x: 10, opacity: 0}, {x: 0, opacity: 1}, 0.5)
@@ -60,5 +66,17 @@ $(function () {
         })
             .setTween(tl1)
             .addTo(controller);
+
+    tl2
+        .fromTo('.sidebar__logo', .9, {x: 0, opacity: 1}, {x: -100, opacity: 0}, 0.5)
+    const scene4p3 = new ScrollMagic.Scene({
+        triggerElement: ".footer",
+        triggerHook: 1,
+        // reverse: false,
+    })
+        .setTween(tl2)
+        .addTo(controller);
+
+
 })
 

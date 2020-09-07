@@ -7,7 +7,6 @@ import 'jquery-ui/ui/widgets/accordion'
 import 'jquery-sticky/jquery.sticky'
 
 import './js/app'
-import './js/accordeon'
 import './js/scrollAnimations.js'
 // SCSS
 import './assets/sass/utils/libs.sass'

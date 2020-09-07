@@ -1,18 +1,38 @@
 @media (max-width: 1600.98px)
   .container
     grid-column-gap: 0
-    padding: 0 30px
+    padding: 0 100px
     box-sizing: border-box
+  .page-header
+    .nav
+      grid-column: 5/13
+    .container
+      width: calc(100% - 497px)
   .footer__adress
     grid-column: 10/13
   .footer__email
     grid-column: 8/10
-@media (max-width: 1366.98px)
   .slider__dots
-    width: 920px
+    width: 980px
+  .sidebar, .sticky-wrapper
+    width: 397px
+    padding-right: 70px
+@media (max-width: 1366.98px)
+  .top-phone
+    grid-column: 10/13
+  .slider__dots
+    width: 810px
   .nav
     grid-column: 5 / 10
+  .page-header
+    .nav
+      grid-column: 4/13
+    .container
+      width: calc(100% - 450px)
+  .sticky-wrapper
+    width: 350px
   .sidebar
+    width: 350px
     &__contacts
       flex-wrap: wrap
     &__phone
@@ -20,8 +40,6 @@
       margin-bottom: 20px
   .sidebar.in-fix
     max-width: 30%
-  .page-header .nav
-    grid-column: 8/13
   .banner__txt
     grid-column: 3/9
   .slider__counter

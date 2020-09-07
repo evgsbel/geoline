@@ -42,10 +42,14 @@ $(document).ready(function () {
             arrows: false,
             dots: true,
             dotsClass: 'slider__dots',
-            fade: true,
-            cssEase: 'linear',
-            autoplay: false,
+            //fade: true,
+            cssEase: 'cubic-bezier(1,1,.75,.96)',
+            autoplay: true,
             autoplaySpeed: 5000,
+        });
+
+        $slider.on('beforeChange', function(event, slick, currentSlide, nextSlide){
+            $('.slider__dots .slick-active button').toggleClass('askdjalkdsjaskdlj')
         });
 
     }
@@ -87,7 +91,7 @@ $(() => {
     function checkWidth() {
         let windowWidth = $('body').innerWidth()
         if (windowWidth > 769) {
-            $("#aside1").sticky({topSpacing: 0, bottomSpacing: 158});
+            $("#aside1").sticky({topSpacing: 0, bottomSpacing: 148});
         }
     }
     checkWidth();
@@ -199,4 +203,16 @@ $(window).on('load', function () {
     //     scrollInertia: '1000',
     //     scrollButtons:{ enable: false }
     // });
+});
+
+//accordeon
+$('.js-ui-accordion_click').click(function() {
+    if ($(this).closest('.js-ui-accordion__item').find('.js-ui-accordion_open').is(':visible')) {
+        $(this).closest('.js-ui-accordion__item').find('.js-ui-accordion_open').hide('slow');
+
+    }
+    else {
+        $(this).closest('.js-ui-accordion__item').find('.js-ui-accordion_open').show('slow');
+    }
+    $(this).toggleClass('is-active')
 });
