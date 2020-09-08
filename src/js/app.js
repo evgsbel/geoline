@@ -44,7 +44,7 @@ $(document).ready(function () {
             dotsClass: 'slider__dots',
             //fade: true,
             cssEase: 'cubic-bezier(1,1,.75,.96)',
-            autoplay: true,
+            autoplay: false,
             autoplaySpeed: 5000,
         });
 
@@ -57,10 +57,7 @@ $(document).ready(function () {
 
 //open sub menu
 
-// $('.js-open-sub').hover(function () {
-//     $(this).find('.nav__sub').toggleClass('show')
-// })
-var el = document.getElementsByClassName('js-open-sub');
+let el = document.getElementsByClassName('js-open-sub');
 for (let i = 0; i < el.length; i++) {
     el[i].addEventListener("mouseenter", showSub, false);
     el[i].addEventListener("mouseleave", hideSub, false);
@@ -113,7 +110,7 @@ $(() => {
         $('.js-open-mobile-sub').removeClass('is-open')
         $(this).addClass('is-open')
         $(this).find('a').removeAttr('href')
-        $('.js-open-mobile-sub').find('.sub__menu_mobile').slideUp(400)
+       // $('.js-open-mobile-sub').find('.sub__menu_mobile').slideUp(400)
         $(this).find('.sub__menu_mobile').slideToggle(400)
     })
     $('.js-open-map-right').on('click', function openMapRight() {
