@@ -32,10 +32,17 @@ $("#one").each(function() {
         .setClassToggle("header", "page-header")
         .addTo(ctrl);
 
+
+    new ScrollMagic.Scene({
+        offset: wh*1,
+    })
+        .setClassToggle(".sidebar", "sidebar-start")
+        .addTo(ctrl);
+
     new ScrollMagic.Scene({
         offset: wh*1
     })
-        .setClassToggle(".sidebar", "sidebar-start")
+        .setClassToggle(".content", "content_scroll")
         .addTo(ctrl);
 });
 

@@ -896,7 +896,10 @@ img {
   grid-column: 5/13;
   padding-top: 160px;
   box-sizing: border-box;
-  margin-right: 50px; }
+  max-height: 100%;
+  overflow-y: hidden; }
+  .content_scroll {
+    max-height: 100vh; }
   .content__in {
     margin-top: 30px;
     margin-bottom: 90px;
@@ -1625,6 +1628,16 @@ img {
     outline: none;
     border: 0; }
 
+.mCSB_inside > .mCSB_container {
+  margin-right: 50px; }
+
+.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
+  height: auto; }
+
+.mCSB_scrollTools .mCSB_draggerRail {
+  width: 3px;
+  background-color: #0B7CD3; }
+
 @media (max-width: 1600.98px) {
   .container {
     grid-column-gap: 0;
@@ -1939,4 +1952,4 @@ img {
     max-width: 70%; } }
 
 
-/*# sourceMappingURL=app.6259c2b17a2de29eb774.css.map*/
+/*# sourceMappingURL=app.3ac6bca3c4fe057b6e7c.css.map*/
