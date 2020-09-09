@@ -2,6 +2,7 @@
 @import 'utils/font.sass'
 
 
+
 // animations
 @-webkit-keyframes mousePoint
   0%
@@ -370,6 +371,7 @@ img
     right: 4%
     display: flex
     align-items: flex-end
+    z-index: 10
   &__number
     font-family: 'mont-light', serif
     font-size: 200px
@@ -391,15 +393,23 @@ img
     position: absolute
     bottom: 160px
     max-width: 100%
-    width: 1200px
+    width: 1140px
     left: 0
     right: 0
     margin: 0 auto
     display: flex
+    .owl-dots
+      display: flex
+      li
+        width: 53px
+        position: relative
+        display: inline-block
+        outline: none
+        height: 15px
     button
       font-size: 0
-      width: 15px
-      height: 15px
+      width: 17px
+      height: 17px
       -webkit-border-radius: 50px
       -moz-border-radius: 50px
       border-radius: 50px
@@ -407,26 +417,52 @@ img
       border: 2px solid #fff
       transition: .3s all ease-in-out
       cursor: pointer
-      &:before
-        content: ''
-        transition: left .5s ease-out, width .5s ease-out
-        width: 53px
-        height: 15px
-        display: block
-      &:hover
-        background-color: #fff
-        width: 53px
       &:focus, &:active
         outline: none
         border: 0
-    li
-      text-align: center
-      width: 53px
-      &.slick-active
-        margin-right: 10px
-        button
-          background-color: #fff
-          width: 53px
+.dots-wrap
+  position: relative
+  filter: url(#goo)
+  button.owl-dot
+    position: relative
+    display: inline-block
+    width: 17px
+    height: 17px
+    padding: 0
+    line-height: 34px
+    background-color: #fff
+    border: 2px solid #fff
+    border-radius: 50px
+    margin-right: 25px
+    outline: none
+    appearance: none
+    transition: background-color .5s, width .5s ease-out
+  button.owl-dot
+    &:hover
+      background-color: #fff
+  button.owl-dot.active
+    background-color: #fff
+    width: 55px
+  .dot-current-bg
+    position: absolute
+    top: 0
+    background-color: #fff
+    width: 27px
+    height: 17px
+    border-radius: 50px
+    margin: 0
+    transition: left .5s ease-out, width .5s ease-out
+    border: 0
+    z-index: 10
+.owl-theme .owl-dots .owl-dot span
+  width: 0
+  &:hover
+    background-color: transparent
+.owl-svg
+    position: fixed
+    z-index: -99
+
+
 .opportunities
   .container
     position: static

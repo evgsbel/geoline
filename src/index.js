@@ -1,9 +1,9 @@
 // JS
 //import * as $ from 'jquery'
 import 'slick-carousel/slick/slick.min';
+import 'owl.carousel/dist/owl.carousel.min';
 import '@fancyapps/fancybox'
 import 'malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min'
-import 'jquery-ui/ui/widgets/accordion'
 import 'jquery-sticky/jquery.sticky'
 
 import './js/app'
