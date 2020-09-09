@@ -99,6 +99,23 @@ $(() => {
         let windowWidth = $('body').innerWidth()
         if (windowWidth > 769) {
             $("#aside1").sticky({topSpacing: 0, bottomSpacing: 148});
+
+            $('.js-content-scroll').mCustomScrollbar({
+                axis: 'y',
+                scrollInertia: '300',
+                scrollButtons:{ enable: false },
+                // callbacks:{
+                //     onScrollStart: function () {
+                //         $(this).addClass('is-scrolling');
+                //     },
+                //     onTotalScrollOffset:40,
+                //     onTotalScrollBack:function(){
+                //         $(this).removeClass('is-scrolling');
+                //     },
+                //     onTotalScrollBackOffset:40
+                //
+                // }
+            });
         }
     }
 
@@ -206,12 +223,7 @@ $(window).on('load', function () {
         scrollbarPosition: 'outside',
         scrollInertia: 200,
     });
-    $('.js-content-scroll').mCustomScrollbar({
-        axis: 'y',              // вертикальный скролл
-        scrollInertia: '300',
-        scrollbarPosition: "500",
-        scrollButtons:{ enable: false }
-    });
+
 });
 
 //accordeon

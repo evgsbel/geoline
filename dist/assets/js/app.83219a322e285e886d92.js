@@ -583,6 +583,24 @@ $(function () {
         topSpacing: 0,
         bottomSpacing: 148
       });
+      $('.js-content-scroll').mCustomScrollbar({
+        axis: 'y',
+        scrollInertia: '300',
+        scrollButtons: {
+          enable: false
+        } // callbacks:{
+        //     onScrollStart: function () {
+        //         $(this).addClass('is-scrolling');
+        //     },
+        //     onTotalScrollOffset:40,
+        //     onTotalScrollBack:function(){
+        //         $(this).removeClass('is-scrolling');
+        //     },
+        //     onTotalScrollBackOffset:40
+        //
+        // }
+
+      });
     }
   }
 
@@ -686,15 +704,6 @@ $(window).on('load', function () {
     scrollbarPosition: 'outside',
     scrollInertia: 200
   });
-  $('.js-content-scroll').mCustomScrollbar({
-    axis: 'y',
-    // вертикальный скролл
-    scrollInertia: '300',
-    scrollbarPosition: "500",
-    scrollButtons: {
-      enable: false
-    }
-  });
 }); //accordeon
 
 $('.js-ui-accordion_click').click(function () {
@@ -721,44 +730,66 @@ $('.js-ui-accordion_click').click(function () {
 __webpack_require__.r(__webpack_exports__);
 /* WEBPACK VAR INJECTION */(function($) {/* harmony import */ var TimelineMax__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! TimelineMax */ "./node_modules/gsap/src/minified/TimelineMax.min.js");
 /* harmony import */ var TimelineMax__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(TimelineMax__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var ScrollMagic__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ScrollMagic */ "./node_modules/scrollmagic/scrollmagic/minified/ScrollMagic.min.js");
-/* harmony import */ var ScrollMagic__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(ScrollMagic__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var animation_gsap__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! animation.gsap */ "./node_modules/scrollmagic/scrollmagic/minified/plugins/animation.gsap.min.js");
-/* harmony import */ var animation_gsap__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(animation_gsap__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var debug_addIndicators__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! debug.addIndicators */ "./node_modules/scrollmagic/scrollmagic/minified/plugins/debug.addIndicators.min.js");
-/* harmony import */ var debug_addIndicators__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(debug_addIndicators__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var TweenLite__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! TweenLite */ "./node_modules/gsap/src/minified/TweenLite.min.js");
+/* harmony import */ var TweenLite__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(TweenLite__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var ScrollMagic__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ScrollMagic */ "./node_modules/scrollmagic/scrollmagic/minified/ScrollMagic.min.js");
+/* harmony import */ var ScrollMagic__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(ScrollMagic__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var animation_gsap__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! animation.gsap */ "./node_modules/scrollmagic/scrollmagic/minified/plugins/animation.gsap.min.js");
+/* harmony import */ var animation_gsap__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(animation_gsap__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var debug_addIndicators__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! debug.addIndicators */ "./node_modules/scrollmagic/scrollmagic/minified/plugins/debug.addIndicators.min.js");
+/* harmony import */ var debug_addIndicators__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(debug_addIndicators__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var scrollToPlugin__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! scrollToPlugin */ "./node_modules/gsap/src/minified/plugins/ScrollToPlugin.min.js");
+/* harmony import */ var scrollToPlugin__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(scrollToPlugin__WEBPACK_IMPORTED_MODULE_5__);
 
 
 
 
-var ctrl = new ScrollMagic__WEBPACK_IMPORTED_MODULE_1___default.a.Controller({
+
+
+var ctrl = new ScrollMagic__WEBPACK_IMPORTED_MODULE_2___default.a.Controller({
   globalSceneOptions: {
     triggerHook: 'onLeave'
   }
 }); // Create scene
+// $("#one").each(function() {
+//
+//     let name = $(this).attr('id');
+//
+//     new ScrollMagic.Scene({
+//         triggerElement: this
+//     })
+//         .setPin(this)
+//         .loglevel(3)
+//         .addTo(ctrl);
+//
+//     // Get window height
+//     let wh = window.innerHeight;
+//
+//     new ScrollMagic.Scene({
+//         offset: wh*1
+//     })
+//         .setClassToggle("header", "page-header")
+//         .addTo(ctrl);
+//
+//
+//     new ScrollMagic.Scene({
+//         offset: wh*1,
+//     })
+//         .setClassToggle(".sidebar", "sidebar-start")
+//         .addTo(ctrl);
+//
+//     new ScrollMagic.Scene({
+//         offset: wh*1
+//     })
+//         .setClassToggle(".content", "content_scroll")
+//         .addTo(ctrl);
+// });
 
-$("#one").each(function () {
-  var name = $(this).attr('id');
-  new ScrollMagic__WEBPACK_IMPORTED_MODULE_1___default.a.Scene({
-    triggerElement: this
-  }).setPin(this).loglevel(3).addTo(ctrl); // Get window height
-
-  var wh = window.innerHeight;
-  new ScrollMagic__WEBPACK_IMPORTED_MODULE_1___default.a.Scene({
-    offset: wh * 1
-  }).setClassToggle("header", "page-header").addTo(ctrl);
-  new ScrollMagic__WEBPACK_IMPORTED_MODULE_1___default.a.Scene({
-    offset: wh * 1
-  }).setClassToggle(".sidebar", "sidebar-start").addTo(ctrl);
-  new ScrollMagic__WEBPACK_IMPORTED_MODULE_1___default.a.Scene({
-    offset: wh * 1
-  }).setClassToggle(".content", "content_scroll").addTo(ctrl);
-});
 $(function () {
   var tl0 = new TimelineMax__WEBPACK_IMPORTED_MODULE_0___default.a();
   var tl1 = new TimelineMax__WEBPACK_IMPORTED_MODULE_0___default.a();
   var tl2 = new TimelineMax__WEBPACK_IMPORTED_MODULE_0___default.a();
-  var controller = new ScrollMagic__WEBPACK_IMPORTED_MODULE_1___default.a.Controller();
+  var controller = new ScrollMagic__WEBPACK_IMPORTED_MODULE_2___default.a.Controller();
   tl0.fromTo('.preloader__logo', .4, {
     x: 10,
     opacity: 0
@@ -793,9 +824,9 @@ $(function () {
     x: 0,
     opacity: 1
   }, 0.5);
-  var scene4p2 = new ScrollMagic__WEBPACK_IMPORTED_MODULE_1___default.a.Scene({
+  var scene4p2 = new ScrollMagic__WEBPACK_IMPORTED_MODULE_2___default.a.Scene({
     triggerElement: ".footer",
-    triggerHook: 1 // reverse: false,
+    triggerHook: .9 // reverse: false,
 
   }).setTween(tl1).addTo(controller);
   tl2.fromTo('.sidebar__logo', .9, {
@@ -805,15 +836,130 @@ $(function () {
     x: -100,
     opacity: 0
   }, 0.5);
-  var scene4p3 = new ScrollMagic__WEBPACK_IMPORTED_MODULE_1___default.a.Scene({
+  var scene4p3 = new ScrollMagic__WEBPACK_IMPORTED_MODULE_2___default.a.Scene({
     triggerElement: ".footer",
-    triggerHook: 1 // reverse: false,
+    triggerHook: .9 // reverse: false,
 
   }).setTween(tl2).addTo(controller);
 });
+$(window).on('load', gsapScrollPanel);
+
+function gsapScrollPanel() {
+  var controllerScrollPanel, scrollSceneDefaultForward, scrollSceneDefaultReverse, resizeTimer; // If the .fullpage container exists, set up the fullpage section animations
+
+  if ($('.fullpage').length) {
+    initController();
+    handleResize();
+  } // Initialize the scrollMagic controller
+
+
+  function initController() {
+    // Init new controller
+    controllerScrollPanel = new ScrollMagic__WEBPACK_IMPORTED_MODULE_2___default.a.Controller(); // Change behaviour of controller to animate scroll instead of jump
+
+    controllerScrollPanel.scrollTo(function (newpos) {
+      TweenMax.to(window, 0.5, {
+        scrollTo: {
+          y: newpos,
+          autoKill: false
+        }
+      });
+    }); // Init the forward and reverse scenes
+
+    scrollPanelScenes();
+  } // If window is resized, destroy controller and reset once resize has stopped
+
+
+  function handleResize() {
+    $(window).resize(function () {
+      destroyScrollPanels();
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(doneResizing, 500);
+    });
+
+    function doneResizing() {
+      reInitScrollPanels();
+    }
+  } // Destroy scroll panels
+
+
+  function destroyScrollPanels() {
+    controllerScrollPanel.destroy();
+    scrollSceneDefaultForward.destroy();
+    scrollSceneDefaultReverse.destroy();
+  } // Re-init scroll panels
+
+
+  function reInitScrollPanels() {
+    controllerScrollPanel = null;
+    scrollSceneDefaultForward = null;
+    scrollSceneDefaultReverse = null;
+    initController();
+  } // The forward and reverse scenes
+
+
+  function scrollPanelScenes() {
+    // Create scenes for panels, when scrolling forward
+    $('.fullpage__section').each(function (index, elem) {
+      var $scrollPanel = $(elem);
+      var forwardScrollPos = $scrollPanel.offset().top;
+      scrollSceneDefaultForward = new ScrollMagic__WEBPACK_IMPORTED_MODULE_2___default.a.Scene({
+        offset: 10,
+        // Number of pixels user can scroll before panel snaps into place
+        triggerElement: elem,
+        triggerHook: 1 // Trigger this scene when top of panel enters view
+
+      }).on('start', function (event) {
+        if (event.scrollDirection == 'FORWARD') {
+          controllerScrollPanel.scrollTo(forwardScrollPos); // If direction is forward, trigger scrollTo
+        } else if (event.scrollDirection == 'REVERSE') {// Do nothing
+        }
+      }) // Prevent problems with momentum scrolling by pausing for a period of time
+      // .on('enter', function(event) {
+      //    // $('body').addClass('is-locked');
+      //     setTimeout(function() {
+      //         $('body').removeClass('is-locked');
+      //     },1200)
+      // })
+      .addTo(controllerScrollPanel);
+    }); // Create scenes for panels, when scrolling reverse
+
+    $('.fullpage__section:nth-child(n+2)').each(function (index, elem) {
+      var $scrollPanel = $(elem);
+      var reverseScrollPos = $scrollPanel.prev().offset().top;
+      scrollSceneDefaultReverse = new ScrollMagic__WEBPACK_IMPORTED_MODULE_2___default.a.Scene({
+        offset: -10,
+        // Number of pixels user can scroll before panel snaps into place
+        triggerElement: elem,
+        triggerHook: 0 // Trigger this scene when bottom of panel enters view
+
+      }).on('start', function (event) {
+        if (event.scrollDirection == 'FORWARD') {// Do nothing
+        } else if (event.scrollDirection == 'REVERSE') {
+          controllerScrollPanel.scrollTo(reverseScrollPos); // If direction is reverse, trigger scrollTo
+        }
+      }) // Prevent problems with momentum scrolling by pausing for a period of time
+      // .on('leave', function(event) {
+      //     $('body').addClass('is-locked');
+      //     setTimeout(function() {
+      //         $('body').removeClass('is-locked');
+      //     },1200)
+      // })
+      .addTo(controllerScrollPanel);
+    }); // Get window height
+
+    var wh = window.innerHeight;
+    new ScrollMagic__WEBPACK_IMPORTED_MODULE_2___default.a.Scene({
+      offset: wh * 1
+    }).setClassToggle("header", "page-header").addTo(ctrl);
+    new ScrollMagic__WEBPACK_IMPORTED_MODULE_2___default.a.Scene({
+      offset: wh * 1
+    }).setClassToggle(".sidebar", "sidebar-start").addTo(ctrl);
+  }
+}
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js")))
 
 /***/ })
 
 /******/ });
-//# sourceMappingURL=app.3ac6bca3c4fe057b6e7c.js.map
+//# sourceMappingURL=app.83219a322e285e886d92.js.map

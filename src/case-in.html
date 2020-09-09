@@ -96,8 +96,9 @@
 </header>
 <section class="case-in section-in">
     <div class="container">
-        <div class="sidebar fixed-block" id="aside1">
-            <div class="logo d-flex">
+
+        <div class="sidebar sidebar-start fixed-block" id="aside1">
+            <div class="sidebar__logo logo d-flex">
                 <div class="logo_blue">
                     <svg width="68" height="99" viewBox="0 0 68 99">
                         <use xlink:href="#logo-blue"></use>
@@ -107,7 +108,7 @@
                     технологии
                 </div>
             </div>
-            <a href="" class="back">
+            <a href="" class="only-mobile back">
                 <div>
                     <svg width="58" height="8" viewBox="0 0 58 8">
                         <use xlink:href="#icon-back"></use>
@@ -156,7 +157,7 @@
                 </div>
             </div>
         </div>
-        <div class="content">
+        <div class="content js-content-scroll">
             <div class="breadcrumbs">
                 <ul class="breadcrumbs__wr">
                     <li class="breadcrumbs__item">
@@ -173,8 +174,8 @@
                     </li>
                 </ul>
             </div>
-            <div class="case-in__banner"><img src="./assets/img/cin-banner.png" alt=""></div>
             <div class="title">ГБУ СО «СОЦИ»</div>
+            <div class="case-in__banner"><img src="./assets/img/cin-banner.png" alt=""></div>
             <div class="case-in__subttl">
                 «Сахалинский областной центр информатизации»
             </div>
@@ -224,15 +225,16 @@
         </div>
     </div>
 </section>
-<div class="stop"></div>
 <footer class="footer" id="footer">
     <div class="container">
-        <div class="footer__item footer__logo d-flex">
-            <svg class="footer__logo_img" width="47" height="68" viewBox="0 0 47 68">
-                <use xlink:href="#logo-blue"></use>
-            </svg>
-            <div class="logo__caption">геолайн <br>
-                технологии
+        <div class="footer__item footer__logo only-desktop">
+            <div class="d-flex logo">
+                <svg class="footer__logo_img" width="47" height="68" viewBox="0 0 47 68">
+                    <use xlink:href="#logo-blue"></use>
+                </svg>
+                <div class="logo__caption">геолайн <br>
+                    технологии
+                </div>
             </div>
         </div>
         <div class="footer__item footer__copy">
@@ -311,7 +313,7 @@
                 </li>
                 <li class="nav__item nav__item_sub js-open-mobile-sub">
                     <a href="" class="nav__link"> <span> Опыт</span></a>
-                    <ul class="sub__menu_mobile is-active">
+                    <ul class="sub__menu_mobile ">
                         <li class="sub__menu_mobile_item">
                             <a class="sub__menu_mobile_link" href="">Профайл</a>
                         </li>

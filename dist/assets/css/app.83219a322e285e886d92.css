@@ -847,7 +847,7 @@ img {
     z-index: 10;
     top: 0; }
   .sidebar .logo {
-    margin-bottom: 60px; }
+    margin-bottom: 55px; }
     .sidebar .logo svg {
       opacity: 0; }
   .sidebar .logo__caption {
@@ -896,10 +896,7 @@ img {
   grid-column: 5/13;
   padding-top: 160px;
   box-sizing: border-box;
-  max-height: 100%;
-  overflow-y: hidden; }
-  .content_scroll {
-    max-height: 100vh; }
+  max-height: 100vh; }
   .content__in {
     margin-top: 30px;
     margin-bottom: 90px;
@@ -1137,7 +1134,7 @@ img {
   margin-bottom: 0; }
 
 #one {
-  height: 100%; }
+  height: 100vh; }
 
 #two {
   background-color: #F8F8F8;
@@ -1601,7 +1598,8 @@ img {
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 0; }
+  border: 0;
+  cursor: pointer; }
   .form__submit:active, .form__submit:focus {
     outline: none;
     border: 0; }
@@ -1637,6 +1635,9 @@ img {
 .mCSB_scrollTools .mCSB_draggerRail {
   width: 3px;
   background-color: #0B7CD3; }
+
+.js-content-scroll.is-scrolling {
+  padding-top: 92px; }
 
 @media (max-width: 1600.98px) {
   .container {
@@ -1830,7 +1831,9 @@ img {
   .content {
     grid-column: 1/13;
     margin-top: 50px;
-    padding-top: 0; }
+    padding-top: 0;
+    margin-right: 50px;
+    max-height: 100%; }
   .footer__copy {
     grid-column: 1/5; }
   .footer__email {
@@ -1952,4 +1955,4 @@ img {
     max-width: 70%; } }
 
 
-/*# sourceMappingURL=app.3ac6bca3c4fe057b6e7c.css.map*/
+/*# sourceMappingURL=app.83219a322e285e886d92.css.map*/
