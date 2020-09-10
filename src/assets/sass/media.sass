@@ -17,6 +17,8 @@
   .sidebar, .sticky-wrapper
     width: 397px
     padding-right: 70px
+  .news-inner .mt-minus
+    margin-top: 0
 @media (max-width: 1366.98px)
   .top-phone
     grid-column: 10/13
@@ -42,6 +44,16 @@
     grid-column: 3/9
   .slider__counter
     top: 25%
+  .contacts__info
+    max-width: 90%
+  .contacts__link
+    width: 100%
+    display: block
+    margin-bottom: 20px
+  .news__list-month__item
+    width: 18%
+  .news-inner__design
+    margin-bottom: 30px
 @media (max-width: 1280.98px)
   .page-header
     .container
@@ -56,6 +68,22 @@
   .content__in_design_left
     ul
       margin-left: 80px
+  .news__wr
+    flex-wrap: wrap
+  .news__last
+    width: 100%
+    margin-right: 0
+    margin-bottom: 20px
+    border-bottom: 1px solid #0B7CD3
+  .news__list
+    width: 100%
+  .news-inner__footnote
+    position: relative
+    padding: 0
+    max-width: 100%
+    top: 0
+  .news-inner__design_left .news-inner__footnote
+    left: 0
 @media (max-width: 1025.98px)
   .sticky-wrapper
     width: 300px
@@ -101,6 +129,9 @@
     max-width: 100%
   .case:after
     right: -60px
+  .feedback:after
+    right: -60px
+    width: 60px
   .footer__adress
     grid-column: 5/13
     margin-top: 20px
@@ -125,6 +156,30 @@
     margin-left: 0
   .footer
     padding: 20px 0
+  .case-in__design
+    flex-wrap: wrap
+    &_txt, img
+      max-width: 100%
+  .breadcrumbs__wr
+    flex-wrap: wrap
+    align-items: center
+  .breadcrumbs__item
+    line-height: 1
+    width: 100%
+    margin-bottom: 10px
+  .contacts__wr
+    flex-wrap: wrap
+  .contacts__item
+    width: 100%
+    margin-bottom: 20px
+    height: auto
+    padding: 30px
+  .map.is-active
+    top: 50%
+    width: 100%
+  .contacts__wr.is-active .contacts__item
+    width: 100%
+
 @media (max-width: 768.98px)
   body
     overflow-x: hidden
@@ -195,7 +250,7 @@
     grid-column: 1/13
     margin-top: 50px
     padding-top: 0
-    margin-right: 50px
+
     max-height: 100%
   .footer__copy
     grid-column: 1/5
@@ -213,9 +268,16 @@
       background-color: #262626
   .case
     grid-column: 1/13
+  .feedback
+    grid-column: 1/13
   .only-tablet
     display: block
 @media (max-width: 480.98px)
+  .news__list-year
+    flex-wrap: wrap
+    justify-content: flex-start
+  .news__list-year__item
+    width: 15%
   .container
     padding: 0 30px
   .only-mobile
@@ -292,6 +354,10 @@
     padding: 30px
   .cases2__item
     padding: 30px
+  .form__wr
+    flex-wrap: wrap
+  .form__input
+    width: 100%
 @media (max-width: 375.98px)
   .top-phone
     font-size: 16px

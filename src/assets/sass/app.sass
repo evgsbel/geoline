@@ -694,6 +694,8 @@ img
     display: flex
     justify-content: space-between
     margin-bottom: 35px
+    &_txt, img
+      max-width: 50%
 .dots-list
   list-style: disc
   font-family: 'got-regular', serif
@@ -975,9 +977,12 @@ img
       font-family: 'mont-medium'
       text-decoration: none
       transition: .3s all ease-in-out
-      &_active, &:hover
+      &:hover
         color: #0B7CD3
         transform: scale(1.5)
+      &_active
+        color: #0B7CD3
+        font-size: 25px
   &__list-month
     display: flex
     flex-wrap: wrap
