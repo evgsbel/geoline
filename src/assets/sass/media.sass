@@ -63,6 +63,26 @@
     padding: 0 60px
   .sidebar
     box-sizing: border-box
+    &:before
+      width: 60px
+      left: -60px
+    &:after
+      width: 60px
+      right: -60px
+  .case
+    &:before
+      width: 60px
+      left: -60px
+      &:after
+        width: 60px
+        right: -60px
+  .feedback
+    &:before
+      width: 60px
+      left: -60px
+    &:after
+      width: 60px
+      right: -60px
   .js-ui-accordion_click
     font-size: 15px
   .content__in_design_left
@@ -174,8 +194,9 @@
     margin-bottom: 20px
     height: auto
     padding: 30px
+    position: relative
   .map.is-active
-    top: 50%
+    top: 0
     width: 100%
   .contacts__wr.is-active .contacts__item
     width: 100%
@@ -250,7 +271,6 @@
     grid-column: 1/13
     margin-top: 50px
     padding-top: 0
-
     max-height: 100%
   .footer__copy
     grid-column: 1/5
@@ -259,7 +279,6 @@
   .footer__adress
     grid-column: 1/13
     margin-top: 20px
-
   .page-header 
     .top-phone
       display: block
@@ -358,6 +377,28 @@
     flex-wrap: wrap
   .form__input
     width: 100%
+  .sidebar
+    box-sizing: border-box
+    &:before
+      width: 30px
+      left: -30px
+    &:after
+      width: 30px
+      right: -30px
+  .case
+    &:before
+      width: 30px
+      left: -30px
+    &:after
+      width: 30px
+      right: -30px
+  .feedback
+    &:before
+      width: 30px
+      left: -30px
+    &:after
+      width: 30px
+      right: -30px
 @media (max-width: 375.98px)
   .top-phone
     font-size: 16px

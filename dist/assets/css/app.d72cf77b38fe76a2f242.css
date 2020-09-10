@@ -847,7 +847,10 @@ img {
     z-index: 10;
     top: 0; }
   .sidebar .logo {
-    margin-bottom: 55px; }
+    margin-bottom: 55px;
+    text-decoration: none;
+    position: relative;
+    z-index: 100; }
     .sidebar .logo svg {
       opacity: 0; }
   .sidebar .logo__caption {
@@ -896,7 +899,7 @@ img {
   grid-column: 5/13;
   padding-top: 160px;
   box-sizing: border-box;
-  max-height: 100vh; }
+  max-height: calc(100vh + 270px); }
   .content__in {
     margin-top: 30px;
     margin-bottom: 90px;
@@ -1502,6 +1505,13 @@ img {
   .contacts__link:first-child {
     margin-right: 30px; }
 
+.contacts__close {
+  border: 0;
+  position: absolute;
+  right: 0;
+  background-color: #0D3F65;
+  padding: 15px; }
+
 .map {
   position: absolute;
   top: -100%;
@@ -1708,6 +1718,24 @@ img {
     padding: 0 60px; }
   .sidebar {
     box-sizing: border-box; }
+    .sidebar:before {
+      width: 60px;
+      left: -60px; }
+    .sidebar:after {
+      width: 60px;
+      right: -60px; }
+  .case:before {
+    width: 60px;
+    left: -60px; }
+    .case:before:after {
+      width: 60px;
+      right: -60px; }
+  .feedback:before {
+    width: 60px;
+    left: -60px; }
+  .feedback:after {
+    width: 60px;
+    right: -60px; }
   .js-ui-accordion_click {
     font-size: 15px; }
   .content__in_design_left ul {
@@ -1815,9 +1843,10 @@ img {
     width: 100%;
     margin-bottom: 20px;
     height: auto;
-    padding: 30px; }
+    padding: 30px;
+    position: relative; }
   .map.is-active {
-    top: 50%;
+    top: 0;
     width: 100%; }
   .contacts__wr.is-active .contacts__item {
     width: 100%; } }
@@ -1996,7 +2025,27 @@ img {
   .form__wr {
     flex-wrap: wrap; }
   .form__input {
-    width: 100%; } }
+    width: 100%; }
+  .sidebar {
+    box-sizing: border-box; }
+    .sidebar:before {
+      width: 30px;
+      left: -30px; }
+    .sidebar:after {
+      width: 30px;
+      right: -30px; }
+  .case:before {
+    width: 30px;
+    left: -30px; }
+  .case:after {
+    width: 30px;
+    right: -30px; }
+  .feedback:before {
+    width: 30px;
+    left: -30px; }
+  .feedback:after {
+    width: 30px;
+    right: -30px; } }
 
 @media (max-width: 375.98px) {
   .top-phone {
@@ -2024,4 +2073,4 @@ img {
     max-width: 70%; } }
 
 
-/*# sourceMappingURL=app.792ebc08f2f95b92d3e1.css.map*/
+/*# sourceMappingURL=app.d72cf77b38fe76a2f242.css.map*/

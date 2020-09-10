@@ -15,13 +15,19 @@ $(() => {
 
     owl.owlCarousel({
         nav: false, // must be true
-        margin: 30,
         items: 1,
+        loop: true,
         mouseDrag: false,
         autoplay: true,
-        animateOut: 'fadeOut',
-        animateIn: 'fadeIn',
+        smartSpeed: 1600,
+        margin: 0,
         dotsClass: 'owl-dots',
+        responsive: {
+            0: {
+                animateIn: 'fadeIn', // add this
+                animateOut: 'fadeOut', // and this
+            },
+        },
         onInitialized: function () {
             addDotCurrent();
             posUpdate();
@@ -103,7 +109,7 @@ $(() => {
             $('.js-content-scroll').mCustomScrollbar({
                 axis: 'y',
                 scrollInertia: '300',
-                scrollButtons:{ enable: false },
+                scrollButtons: {enable: false},
                 // callbacks:{
                 //     onScrollStart: function () {
                 //         $(this).addClass('is-scrolling');
@@ -147,6 +153,17 @@ $(() => {
         $(this).closest('.contacts__item').find('.map').toggleClass('is-active is-active_right')
         $(this).closest('.contacts__wr').toggleClass('is-active')
         $(this).toggleClass('is-active')
+        if (th.hasClass("is-active")) {
+            th.html("Скрыть карту");
+        } else {
+            th.html("Посмотреть на карте");
+        }
+    })
+    $('.js-close-map').on('click', function closeMap() {
+        th = $(this).closest('.contacts__wr').find('.js-open-map');
+        $(this).closest('.map').removeClass('is-active is-active_right')
+        $(this).closest('.contacts__wr').removeClass('is-active')
+        $(this).closest('.contacts__wr').find('.js-open-map').removeClass('is-active')
         if (th.hasClass("is-active")) {
             th.html("Скрыть карту");
         } else {
@@ -222,6 +239,7 @@ $(window).on('load', function () {
         updateOnContentResize: true,
         scrollbarPosition: 'outside',
         scrollInertia: 200,
+        documentTouchScroll: true
     });
 
 });

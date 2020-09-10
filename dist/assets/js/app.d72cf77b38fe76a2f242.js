@@ -493,13 +493,21 @@ $(function () {
   owl.owlCarousel({
     nav: false,
     // must be true
-    margin: 30,
     items: 1,
+    loop: true,
     mouseDrag: false,
     autoplay: true,
-    animateOut: 'fadeOut',
-    animateIn: 'fadeIn',
+    smartSpeed: 1600,
+    margin: 0,
     dotsClass: 'owl-dots',
+    responsive: {
+      0: {
+        animateIn: 'fadeIn',
+        // add this
+        animateOut: 'fadeOut' // and this
+
+      }
+    },
     onInitialized: function onInitialized() {
       addDotCurrent();
       posUpdate();
@@ -636,6 +644,18 @@ $(function () {
       th.html("Посмотреть на карте");
     }
   });
+  $('.js-close-map').on('click', function closeMap() {
+    th = $(this).closest('.contacts__wr').find('.js-open-map');
+    $(this).closest('.map').removeClass('is-active is-active_right');
+    $(this).closest('.contacts__wr').removeClass('is-active');
+    $(this).closest('.contacts__wr').find('.js-open-map').removeClass('is-active');
+
+    if (th.hasClass("is-active")) {
+      th.html("Скрыть карту");
+    } else {
+      th.html("Посмотреть на карте");
+    }
+  });
   $('.js-open-map-left').on('click', function openMapLeft() {
     var th = $(this);
     $(this).removeAttr('href');
@@ -702,7 +722,8 @@ $(window).on('load', function () {
     },
     updateOnContentResize: true,
     scrollbarPosition: 'outside',
-    scrollInertia: 200
+    scrollInertia: 200,
+    documentTouchScroll: true
   });
 }); //accordeon
 
@@ -962,4 +983,4 @@ function gsapScrollPanel() {
 /***/ })
 
 /******/ });
-//# sourceMappingURL=app.792ebc08f2f95b92d3e1.js.map
+//# sourceMappingURL=app.d72cf77b38fe76a2f242.js.map

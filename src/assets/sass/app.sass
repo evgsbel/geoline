@@ -490,6 +490,9 @@ img
     top: 0
   .logo
     margin-bottom: 55px
+    text-decoration: none
+    position: relative
+    z-index: 100
     svg
       opacity: 0
   .logo__caption
@@ -544,7 +547,7 @@ img
   grid-column: 5/13
   padding-top: 160px
   box-sizing: border-box
-  max-height: 100vh
+  max-height: calc(100vh + 270px)
   &__in
     margin-top: 30px
     margin-bottom: 90px
@@ -1127,6 +1130,12 @@ img
     cursor: pointer
     &:first-child
       margin-right: 30px
+  &__close
+    border: 0
+    position: absolute
+    right: 0
+    background-color: #0D3F65
+    padding: 15px
 .map
   position: absolute
   top: -100%

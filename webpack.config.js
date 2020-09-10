@@ -169,7 +169,7 @@ module.exports = {
     },
     optimization: optimization(),
     devServer: {
-        port: 8080,
+        port: 8081,
     },
     devtool: isDev ? 'source-map' : '',
     plugins: plugins(),
