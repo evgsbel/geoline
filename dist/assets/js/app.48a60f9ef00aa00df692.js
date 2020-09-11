@@ -477,7 +477,9 @@ fetch("./assets/img/svg/sprite.svg").then(function (res) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-/* WEBPACK VAR INJECTION */(function($, jQuery) {//preloader
+/* WEBPACK VAR INJECTION */(function($, jQuery) {function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+//preloader
 $(function () {
   setTimeout(function () {
     $('.preloader__wrp').fadeOut();
@@ -587,28 +589,31 @@ $(function () {
     var windowWidth = $('body').innerWidth();
 
     if (windowWidth > 769) {
+      var _$$mCustomScrollbar;
+
       $("#aside1").sticky({
         topSpacing: 0,
         bottomSpacing: 148
       });
-      $('.js-content-scroll').mCustomScrollbar({
+      $('.js-content-scroll').mCustomScrollbar((_$$mCustomScrollbar = {
         axis: 'y',
         scrollInertia: '300',
         scrollButtons: {
           enable: false
-        } // callbacks:{
-        //     onScrollStart: function () {
-        //         $(this).addClass('is-scrolling');
-        //     },
-        //     onTotalScrollOffset:40,
-        //     onTotalScrollBack:function(){
-        //         $(this).removeClass('is-scrolling');
-        //     },
-        //     onTotalScrollBackOffset:40
-        //
-        // }
-
-      });
+        },
+        advanced: {
+          extraDraggableSelectors: ".myClass, #myID"
+        }
+      }, _defineProperty(_$$mCustomScrollbar, "advanced", {
+        extraDraggableSelectors: ".myClass, #myID"
+      }), _defineProperty(_$$mCustomScrollbar, "callbacks", {
+        onTotalScroll: function onTotalScroll() {
+          $(this).disable();
+        },
+        onSelectorChange: function onSelectorChange() {
+          console.log("Scrollbars updated");
+        }
+      }), _$$mCustomScrollbar));
     } else {
       $('.fullpage').find('.js-animate-section').removeClass("fullpage__section");
     }
@@ -723,7 +728,7 @@ $(window).on('load', function () {
       autoExpandHorizontalScroll: true
     },
     updateOnContentResize: true,
-    scrollbarPosition: 'outside',
+    // scrollbarPosition: 'outside',
     scrollInertia: 200,
     documentTouchScroll: true
   });
@@ -985,4 +990,4 @@ function gsapScrollPanel() {
 /***/ })
 
 /******/ });
-//# sourceMappingURL=app.f93301c173d46429f5f3.js.map
+//# sourceMappingURL=app.48a60f9ef00aa00df692.js.map

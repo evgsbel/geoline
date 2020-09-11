@@ -105,11 +105,13 @@ $(() => {
         let windowWidth = $('body').innerWidth()
         if (windowWidth > 769) {
             $("#aside1").sticky({topSpacing: 0, bottomSpacing: 148});
-
             $('.js-content-scroll').mCustomScrollbar({
                 axis: 'y',
                 scrollInertia: '300',
                 scrollButtons: {enable: false},
+                advanced:{ extraDraggableSelectors: ".myClass, #myID" },
+                advanced:{ extraDraggableSelectors: ".myClass, #myID" },
+
                 // callbacks:{
                 //     onScrollStart: function () {
                 //         $(this).addClass('is-scrolling');
@@ -121,6 +123,14 @@ $(() => {
                 //     onTotalScrollBackOffset:40
                 //
                 // }
+                callbacks:{
+                        onTotalScroll: function(){
+                            $(this).disable();
+                    },
+                    onSelectorChange:function(){
+                        console.log("Scrollbars updated");
+                    }
+                }
             });
         }
         else {
@@ -240,7 +250,7 @@ $(window).on('load', function () {
         autoExpandScrollbar: true,
         advanced: {autoExpandHorizontalScroll: true},
         updateOnContentResize: true,
-        scrollbarPosition: 'outside',
+       // scrollbarPosition: 'outside',
         scrollInertia: 200,
         documentTouchScroll: true
     });
