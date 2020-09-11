@@ -417,12 +417,22 @@ template {
 
 body, html {
   height: 100%;
-  margin: 0; }
+  margin: 0;
+  scrollbar-color: #0B7CD3 #F8F8F8;
+  scrollbar-width: 3px; }
 
 body {
   font-size: 16px;
   font-family: 'mont-medium', serif;
   background-color: #F8F8F8; }
+  body::-webkit-scrollbar {
+    width: 5px; }
+    body::-webkit-scrollbar-track {
+      background-color: #F8F8F8;
+      box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1); }
+    body::-webkit-scrollbar-thumb {
+      background-color: #0B7CD3;
+      border-radius: 5px; }
 
 a {
   text-decoration: underline;
@@ -899,7 +909,7 @@ img {
   grid-column: 5/13;
   padding-top: 160px;
   box-sizing: border-box;
-  max-height: calc(100vh + 270px); }
+  margin-right: 50px; }
   .content__in {
     margin-top: 30px;
     margin-bottom: 90px;
@@ -996,7 +1006,7 @@ img {
     box-sizing: border-box;
     width: 340px;
     margin-right: 20px;
-    max-width: 100%; }
+    flex: 0 0 340px; }
     .case__item:last-child {
       margin-right: 0; }
   .case .slick-slide {
@@ -2087,4 +2097,4 @@ img {
     max-width: 70%; } }
 
 
-/*# sourceMappingURL=app.48a60f9ef00aa00df692.css.map*/
+/*# sourceMappingURL=app.7158d62f54f6ae221e1d.css.map*/

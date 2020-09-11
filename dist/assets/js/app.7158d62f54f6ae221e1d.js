@@ -978,7 +978,7 @@ function gsapScrollPanel() {
 
     var wh = window.innerHeight;
     new ScrollMagic__WEBPACK_IMPORTED_MODULE_2___default.a.Scene({
-      offset: wh * 1
+      offset: wh * 1 - 70
     }).setClassToggle("header", "page-header").addTo(ctrl);
     new ScrollMagic__WEBPACK_IMPORTED_MODULE_2___default.a.Scene({
       offset: wh * 1
@@ -990,4 +990,4 @@ function gsapScrollPanel() {
 /***/ })
 
 /******/ });
-//# sourceMappingURL=app.48a60f9ef00aa00df692.js.map
+//# sourceMappingURL=app.7158d62f54f6ae221e1d.js.map

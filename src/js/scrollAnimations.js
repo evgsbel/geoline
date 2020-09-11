@@ -202,10 +202,11 @@ function gsapScrollPanel() {
         // Get window height
         let wh = window.innerHeight;
         new ScrollMagic.Scene({
-            offset: wh * 1
+            offset: (wh * 1) - 70
         })
             .setClassToggle("header", "page-header")
             .addTo(ctrl);
+
         new ScrollMagic.Scene({
             offset: wh*1,
         })

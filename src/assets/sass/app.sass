@@ -67,10 +67,20 @@
 body, html
   height: 100%
   margin: 0
+  scrollbar-color: #0B7CD3 #F8F8F8
+  scrollbar-width: 3px
 body
   font-size: 16px
   font-family: 'mont-medium', serif
   background-color: #F8F8F8
+  &::-webkit-scrollbar
+    width: 5px
+    &-track
+      background-color: #F8F8F8
+      box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1)
+    &-thumb
+      background-color: #0B7CD3
+      border-radius: 5px
 a
   text-decoration: underline
   color: #0B7CD3
@@ -547,7 +557,7 @@ img
   grid-column: 5/13
   padding-top: 160px
   box-sizing: border-box
-  max-height: calc(100vh + 270px)
+  margin-right: 50px
   &__in
     margin-top: 30px
     margin-bottom: 90px
@@ -642,7 +652,7 @@ img
     box-sizing: border-box
     width: 340px
     margin-right: 20px
-    max-width: 100%
+    flex: 0 0 340px
     &:last-child
       margin-right: 0
   .slick-slide
