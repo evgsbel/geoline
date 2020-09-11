@@ -18,7 +18,7 @@ $(() => {
         items: 1,
         loop: true,
         mouseDrag: false,
-        autoplay: true,
+        autoplay: false,
         smartSpeed: 1600,
         margin: 0,
         dotsClass: 'owl-dots',
@@ -122,6 +122,9 @@ $(() => {
                 //
                 // }
             });
+        }
+        else {
+            $('.fullpage').find('.js-animate-section').removeClass("fullpage__section");
         }
     }
 
@@ -247,10 +250,10 @@ $(window).on('load', function () {
 //accordeon
 $('.js-ui-accordion_click').click(function () {
     if ($(this).closest('.js-ui-accordion__item').find('.js-ui-accordion_open').is(':visible')) {
-        $(this).closest('.js-ui-accordion__item').find('.js-ui-accordion_open').hide('slow');
+        $(this).closest('.js-ui-accordion__item').find('.js-ui-accordion_open').fadeOut();
 
     } else {
-        $(this).closest('.js-ui-accordion__item').find('.js-ui-accordion_open').show('slow');
+        $(this).closest('.js-ui-accordion__item').find('.js-ui-accordion_open').fadeIn();
     }
     $(this).toggleClass('is-active')
 });
