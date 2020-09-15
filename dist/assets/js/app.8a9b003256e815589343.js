@@ -792,7 +792,7 @@ $("#one").each(function () {
     offset: wh * 1 - 80
   }).setClassToggle(".header", "header__fade").addTo(ctrl);
   new ScrollMagic__WEBPACK_IMPORTED_MODULE_2___default.a.Scene({
-    offset: wh * 1
+    offset: wh * 1 + 5
   }).setClassToggle(".sidebar", "sidebar-start").addTo(ctrl);
 });
 $(function () {
@@ -982,4 +982,4 @@ $(function () {
 /***/ })
 
 /******/ });
-//# sourceMappingURL=app.1c8183a16c7116c39405.js.map
+//# sourceMappingURL=app.8a9b003256e815589343.js.map

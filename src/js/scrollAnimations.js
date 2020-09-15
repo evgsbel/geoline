@@ -40,7 +40,7 @@ $("#one").each(function() {
         .addTo(ctrl);
 
     new ScrollMagic.Scene({
-        offset: wh*1
+        offset: wh*1+5
     })
         .setClassToggle(".sidebar", "sidebar-start")
         .addTo(ctrl);
