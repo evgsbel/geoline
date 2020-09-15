@@ -104,13 +104,13 @@ $(() => {
     function checkWidth() {
         let windowWidth = $('body').innerWidth()
         if (windowWidth > 769) {
-            $("#aside1").sticky({topSpacing: 0, bottomSpacing: 148});
-            $('.js-content-scroll').mCustomScrollbar({
-                axis: 'y',
-                scrollInertia: '300',
-                scrollButtons: {enable: false},
-                advanced:{ extraDraggableSelectors: ".myClass, #myID" },
-                advanced:{ extraDraggableSelectors: ".myClass, #myID" },
+                $("#aside1").sticky({topSpacing: 0, bottomSpacing: 148});
+            // $('.js-content-scroll').mCustomScrollbar({
+            //     axis: 'y',
+            //     scrollInertia: '300',
+            //     scrollButtons: {enable: false},
+            //     advanced:{ extraDraggableSelectors: ".myClass, #myID" },
+            //     advanced:{ extraDraggableSelectors: ".myClass, #myID" },
 
                 // callbacks:{
                 //     onScrollStart: function () {
@@ -123,15 +123,15 @@ $(() => {
                 //     onTotalScrollBackOffset:40
                 //
                 // }
-                callbacks:{
-                        onTotalScroll: function(){
-                            $(this).disable();
-                    },
-                    onSelectorChange:function(){
-                        console.log("Scrollbars updated");
-                    }
-                }
-            });
+                // callbacks:{
+                //         onTotalScroll: function(){
+                //             $(this).disable();
+                //     },
+                //     onSelectorChange:function(){
+                //         console.log("Scrollbars updated");
+                //     }
+                // }
+           // });
         }
         else {
             $('.fullpage').find('.js-animate-section').removeClass("fullpage__section");

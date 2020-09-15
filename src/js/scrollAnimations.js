@@ -12,40 +12,40 @@ let ctrl = new ScrollMagic.Controller({
     }
 });
 
-// Create scene
-// $("#one").each(function() {
-//
-//     let name = $(this).attr('id');
-//
-//     new ScrollMagic.Scene({
-//         triggerElement: this
-//     })
-//         .setPin(this)
-//         .loglevel(3)
-//         .addTo(ctrl);
-//
-//     // Get window height
-//     let wh = window.innerHeight;
-//
-//     new ScrollMagic.Scene({
-//         offset: wh*1
-//     })
-//         .setClassToggle("header", "page-header")
-//         .addTo(ctrl);
-//
-//
-//     new ScrollMagic.Scene({
-//         offset: wh*1,
-//     })
-//         .setClassToggle(".sidebar", "sidebar-start")
-//         .addTo(ctrl);
-//
-//     new ScrollMagic.Scene({
-//         offset: wh*1
-//     })
-//         .setClassToggle(".content", "content_scroll")
-//         .addTo(ctrl);
-// });
+//Create scene
+$("#one").each(function() {
+
+    let name = $(this).attr('id');
+
+    new ScrollMagic.Scene({
+        triggerElement: this
+    })
+        .setPin(this)
+        .loglevel(3)
+        .addTo(ctrl);
+
+    // Get window height
+    let wh = window.innerHeight;
+
+    new ScrollMagic.Scene({
+        offset: wh*1
+    })
+        .setClassToggle("header", "page-header")
+        .addTo(ctrl);
+
+    new ScrollMagic.Scene({
+        offset: wh*1-80
+    })
+        .setClassToggle(".header", "header__fade")
+        .addTo(ctrl);
+
+    new ScrollMagic.Scene({
+        offset: wh*1
+    })
+        .setClassToggle(".sidebar", "sidebar-start")
+        .addTo(ctrl);
+
+});
 
 
 $(function () {
@@ -88,129 +88,129 @@ $(function () {
 })
 
 
-$(window).on('load', gsapScrollPanel);
-
-function gsapScrollPanel() {
-    var controllerScrollPanel,
-        scrollSceneDefaultForward,
-        scrollSceneDefaultReverse,
-        resizeTimer;
-
-    // If the .fullpage container exists, set up the fullpage section animations
-    if ($('.fullpage').length) {
-        initController();
-        handleResize();
-    }
-
-    // Initialize the scrollMagic controller
-    function initController() {
-
-        // Init new controller
-        controllerScrollPanel = new ScrollMagic.Controller();
-
-        // Change behaviour of controller to animate scroll instead of jump
-        controllerScrollPanel.scrollTo(function (newpos) {
-            TweenMax.to(window, 0.5, {scrollTo: {y: newpos, autoKill: false}});
-        });
-
-        // Init the forward and reverse scenes
-        scrollPanelScenes();
-    }
-
-    // If window is resized, destroy controller and reset once resize has stopped
-    function handleResize() {
-        $(window).resize(function () {
-            destroyScrollPanels();
-            clearTimeout(resizeTimer);
-            resizeTimer = setTimeout(doneResizing, 500);
-        });
-
-        function doneResizing() {
-            reInitScrollPanels();
-        }
-    }
-
-    // Destroy scroll panels
-    function destroyScrollPanels() {
-        controllerScrollPanel.destroy();
-        scrollSceneDefaultForward.destroy();
-        scrollSceneDefaultReverse.destroy();
-    }
-
-    // Re-init scroll panels
-    function reInitScrollPanels() {
-        controllerScrollPanel = null;
-        scrollSceneDefaultForward = null;
-        scrollSceneDefaultReverse = null;
-        initController();
-    }
-
-    // The forward and reverse scenes
-    function scrollPanelScenes() {
-        // Create scenes for panels, when scrolling forward
-        $('.fullpage__section').each(function (index, elem) {
-            var $scrollPanel = $(elem);
-            var forwardScrollPos = $scrollPanel.offset().top;
-
-            scrollSceneDefaultForward = new ScrollMagic.Scene({
-                offset: 10, // Number of pixels user can scroll before panel snaps into place
-                triggerElement: elem,
-                triggerHook: 1,// Trigger this scene when top of panel enters view
-            })
-                .on('start', function (event) {
-                    if (event.scrollDirection == 'FORWARD') {
-                        controllerScrollPanel.scrollTo(forwardScrollPos); // If direction is forward, trigger scrollTo
-                    } else if (event.scrollDirection == 'REVERSE') {
-                        // Do nothing
-                    }
-                })
-                // Prevent problems with momentum scrolling by pausing for a period of time
-                // .on('enter', function(event) {
-                //    // $('body').addClass('is-locked');
-                //     setTimeout(function() {
-                //         $('body').removeClass('is-locked');
-                //     },1200)
-                // })
-                .addTo(controllerScrollPanel);
-        })
-        // Create scenes for panels, when scrolling reverse
-        $('.fullpage__section:nth-child(n+2)').each(function (index, elem) {
-            var $scrollPanel = $(elem);
-            var reverseScrollPos = $scrollPanel.prev().offset().top;
-
-            scrollSceneDefaultReverse = new ScrollMagic.Scene({
-                offset: -10, // Number of pixels user can scroll before panel snaps into place
-                triggerElement: elem,
-                triggerHook: 0,// Trigger this scene when bottom of panel enters view
-            })
-                .on('start', function (event) {
-                    if (event.scrollDirection == 'FORWARD') {
-                        // Do nothing
-                    } else if (event.scrollDirection == 'REVERSE') {
-                        controllerScrollPanel.scrollTo(reverseScrollPos); // If direction is reverse, trigger scrollTo
-                    }
-                })
-                // Prevent problems with momentum scrolling by pausing for a period of time
-                // .on('leave', function(event) {
-                //     $('body').addClass('is-locked');
-                //     setTimeout(function() {
-                //         $('body').removeClass('is-locked');
-                //     },1200)
-                // })
-                .addTo(controllerScrollPanel);
-        })
-        // Get window height
-        let wh = window.innerHeight;
-        new ScrollMagic.Scene({
-            offset: (wh * 1) - 70
-        })
-            .setClassToggle("header", "page-header")
-            .addTo(ctrl);
-
-        new ScrollMagic.Scene({
-            offset: wh*1,
-        })
-            .setClassToggle(".sidebar", "sidebar-start")
-            .addTo(ctrl);
-    }
-}
+// $(window).on('load', gsapScrollPanel);
+//
+// function gsapScrollPanel() {
+//     var controllerScrollPanel,
+//         scrollSceneDefaultForward,
+//         scrollSceneDefaultReverse,
+//         resizeTimer;
+//
+//     // If the .fullpage container exists, set up the fullpage section animations
+//     if ($('.fullpage').length) {
+//         initController();
+//         handleResize();
+//     }
+//
+//     // Initialize the scrollMagic controller
+//     function initController() {
+//
+//         // Init new controller
+//         controllerScrollPanel = new ScrollMagic.Controller();
+//
+//         // Change behaviour of controller to animate scroll instead of jump
+//         controllerScrollPanel.scrollTo(function (newpos) {
+//             TweenMax.to(window, 0.5, {scrollTo: {y: newpos, autoKill: false}});
+//         });
+//
+//         // Init the forward and reverse scenes
+//         scrollPanelScenes();
+//     }
+//
+//     // If window is resized, destroy controller and reset once resize has stopped
+//     function handleResize() {
+//         $(window).resize(function () {
+//             destroyScrollPanels();
+//             clearTimeout(resizeTimer);
+//             resizeTimer = setTimeout(doneResizing, 500);
+//         });
+//
+//         function doneResizing() {
+//             reInitScrollPanels();
+//         }
+//     }
+//
+//     // Destroy scroll panels
+//     function destroyScrollPanels() {
+//         controllerScrollPanel.destroy();
+//         scrollSceneDefaultForward.destroy();
+//         scrollSceneDefaultReverse.destroy();
+//     }
+//
+//     // Re-init scroll panels
+//     function reInitScrollPanels() {
+//         controllerScrollPanel = null;
+//         scrollSceneDefaultForward = null;
+//         scrollSceneDefaultReverse = null;
+//         initController();
+//     }
+//
+//     // The forward and reverse scenes
+//     function scrollPanelScenes() {
+//         // Create scenes for panels, when scrolling forward
+//         $('.fullpage__section').each(function (index, elem) {
+//             var $scrollPanel = $(elem);
+//             var forwardScrollPos = $scrollPanel.offset().top;
+//
+//             scrollSceneDefaultForward = new ScrollMagic.Scene({
+//                 offset: 10, // Number of pixels user can scroll before panel snaps into place
+//                 triggerElement: elem,
+//                 triggerHook: 1,// Trigger this scene when top of panel enters view
+//             })
+//                 .on('start', function (event) {
+//                     if (event.scrollDirection == 'FORWARD') {
+//                         controllerScrollPanel.scrollTo(forwardScrollPos); // If direction is forward, trigger scrollTo
+//                     } else if (event.scrollDirection == 'REVERSE') {
+//                         // Do nothing
+//                     }
+//                 })
+//                 // Prevent problems with momentum scrolling by pausing for a period of time
+//                 // .on('enter', function(event) {
+//                 //    // $('body').addClass('is-locked');
+//                 //     setTimeout(function() {
+//                 //         $('body').removeClass('is-locked');
+//                 //     },1200)
+//                 // })
+//                 .addTo(controllerScrollPanel);
+//         })
+//         // Create scenes for panels, when scrolling reverse
+//         $('.fullpage__section:nth-child(n+2)').each(function (index, elem) {
+//             var $scrollPanel = $(elem);
+//             var reverseScrollPos = $scrollPanel.prev().offset().top;
+//
+//             scrollSceneDefaultReverse = new ScrollMagic.Scene({
+//                 offset: -10, // Number of pixels user can scroll before panel snaps into place
+//                 triggerElement: elem,
+//                 triggerHook: 0,// Trigger this scene when bottom of panel enters view
+//             })
+//                 .on('start', function (event) {
+//                     if (event.scrollDirection == 'FORWARD') {
+//                         // Do nothing
+//                     } else if (event.scrollDirection == 'REVERSE') {
+//                         controllerScrollPanel.scrollTo(reverseScrollPos); // If direction is reverse, trigger scrollTo
+//                     }
+//                 })
+//                 // Prevent problems with momentum scrolling by pausing for a period of time
+//                 // .on('leave', function(event) {
+//                 //     $('body').addClass('is-locked');
+//                 //     setTimeout(function() {
+//                 //         $('body').removeClass('is-locked');
+//                 //     },1200)
+//                 // })
+//                 .addTo(controllerScrollPanel);
+//         })
+//         // Get window height
+//         let wh = window.innerHeight;
+//         new ScrollMagic.Scene({
+//             offset: (wh * 1) - 70
+//         })
+//             .setClassToggle("header", "page-header")
+//             .addTo(ctrl);
+//
+//         new ScrollMagic.Scene({
+//             offset: wh*1,
+//         })
+//             .setClassToggle(".sidebar", "sidebar-start")
+//             .addTo(ctrl);
+//     }
+// }

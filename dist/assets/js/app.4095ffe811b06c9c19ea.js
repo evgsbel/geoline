@@ -477,9 +477,7 @@ fetch("./assets/img/svg/sprite.svg").then(function (res) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-/* WEBPACK VAR INJECTION */(function($, jQuery) {function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-//preloader
+/* WEBPACK VAR INJECTION */(function($, jQuery) {//preloader
 $(function () {
   setTimeout(function () {
     $('.preloader__wrp').fadeOut();
@@ -589,31 +587,35 @@ $(function () {
     var windowWidth = $('body').innerWidth();
 
     if (windowWidth > 769) {
-      var _$$mCustomScrollbar;
-
       $("#aside1").sticky({
         topSpacing: 0,
         bottomSpacing: 148
-      });
-      $('.js-content-scroll').mCustomScrollbar((_$$mCustomScrollbar = {
-        axis: 'y',
-        scrollInertia: '300',
-        scrollButtons: {
-          enable: false
-        },
-        advanced: {
-          extraDraggableSelectors: ".myClass, #myID"
-        }
-      }, _defineProperty(_$$mCustomScrollbar, "advanced", {
-        extraDraggableSelectors: ".myClass, #myID"
-      }), _defineProperty(_$$mCustomScrollbar, "callbacks", {
-        onTotalScroll: function onTotalScroll() {
-          $(this).disable();
-        },
-        onSelectorChange: function onSelectorChange() {
-          console.log("Scrollbars updated");
-        }
-      }), _$$mCustomScrollbar));
+      }); // $('.js-content-scroll').mCustomScrollbar({
+      //     axis: 'y',
+      //     scrollInertia: '300',
+      //     scrollButtons: {enable: false},
+      //     advanced:{ extraDraggableSelectors: ".myClass, #myID" },
+      //     advanced:{ extraDraggableSelectors: ".myClass, #myID" },
+      // callbacks:{
+      //     onScrollStart: function () {
+      //         $(this).addClass('is-scrolling');
+      //     },
+      //     onTotalScrollOffset:40,
+      //     onTotalScrollBack:function(){
+      //         $(this).removeClass('is-scrolling');
+      //     },
+      //     onTotalScrollBackOffset:40
+      //
+      // }
+      // callbacks:{
+      //         onTotalScroll: function(){
+      //             $(this).disable();
+      //     },
+      //     onSelectorChange:function(){
+      //         console.log("Scrollbars updated");
+      //     }
+      // }
+      // });
     } else {
       $('.fullpage').find('.js-animate-section').removeClass("fullpage__section");
     }
@@ -778,41 +780,25 @@ var ctrl = new ScrollMagic__WEBPACK_IMPORTED_MODULE_2___default.a.Controller({
   globalSceneOptions: {
     triggerHook: 'onLeave'
   }
-}); // Create scene
-// $("#one").each(function() {
-//
-//     let name = $(this).attr('id');
-//
-//     new ScrollMagic.Scene({
-//         triggerElement: this
-//     })
-//         .setPin(this)
-//         .loglevel(3)
-//         .addTo(ctrl);
-//
-//     // Get window height
-//     let wh = window.innerHeight;
-//
-//     new ScrollMagic.Scene({
-//         offset: wh*1
-//     })
-//         .setClassToggle("header", "page-header")
-//         .addTo(ctrl);
-//
-//
-//     new ScrollMagic.Scene({
-//         offset: wh*1,
-//     })
-//         .setClassToggle(".sidebar", "sidebar-start")
-//         .addTo(ctrl);
-//
-//     new ScrollMagic.Scene({
-//         offset: wh*1
-//     })
-//         .setClassToggle(".content", "content_scroll")
-//         .addTo(ctrl);
-// });
+}); //Create scene
 
+$("#one").each(function () {
+  var name = $(this).attr('id');
+  new ScrollMagic__WEBPACK_IMPORTED_MODULE_2___default.a.Scene({
+    triggerElement: this
+  }).setPin(this).loglevel(3).addTo(ctrl); // Get window height
+
+  var wh = window.innerHeight;
+  new ScrollMagic__WEBPACK_IMPORTED_MODULE_2___default.a.Scene({
+    offset: wh * 1
+  }).setClassToggle("header", "page-header").addTo(ctrl);
+  new ScrollMagic__WEBPACK_IMPORTED_MODULE_2___default.a.Scene({
+    offset: wh * 1 - 80
+  }).setClassToggle(".header", "header__fade").addTo(ctrl);
+  new ScrollMagic__WEBPACK_IMPORTED_MODULE_2___default.a.Scene({
+    offset: wh * 1
+  }).setClassToggle(".sidebar", "sidebar-start").addTo(ctrl);
+});
 $(function () {
   var tl0 = new TimelineMax__WEBPACK_IMPORTED_MODULE_0___default.a();
   var tl1 = new TimelineMax__WEBPACK_IMPORTED_MODULE_0___default.a();
@@ -869,125 +855,135 @@ $(function () {
     triggerHook: .9 // reverse: false,
 
   }).setTween(tl2).addTo(controller);
-});
-$(window).on('load', gsapScrollPanel);
-
-function gsapScrollPanel() {
-  var controllerScrollPanel, scrollSceneDefaultForward, scrollSceneDefaultReverse, resizeTimer; // If the .fullpage container exists, set up the fullpage section animations
-
-  if ($('.fullpage').length) {
-    initController();
-    handleResize();
-  } // Initialize the scrollMagic controller
-
-
-  function initController() {
-    // Init new controller
-    controllerScrollPanel = new ScrollMagic__WEBPACK_IMPORTED_MODULE_2___default.a.Controller(); // Change behaviour of controller to animate scroll instead of jump
-
-    controllerScrollPanel.scrollTo(function (newpos) {
-      TweenMax.to(window, 0.5, {
-        scrollTo: {
-          y: newpos,
-          autoKill: false
-        }
-      });
-    }); // Init the forward and reverse scenes
-
-    scrollPanelScenes();
-  } // If window is resized, destroy controller and reset once resize has stopped
-
-
-  function handleResize() {
-    $(window).resize(function () {
-      destroyScrollPanels();
-      clearTimeout(resizeTimer);
-      resizeTimer = setTimeout(doneResizing, 500);
-    });
-
-    function doneResizing() {
-      reInitScrollPanels();
-    }
-  } // Destroy scroll panels
-
-
-  function destroyScrollPanels() {
-    controllerScrollPanel.destroy();
-    scrollSceneDefaultForward.destroy();
-    scrollSceneDefaultReverse.destroy();
-  } // Re-init scroll panels
-
-
-  function reInitScrollPanels() {
-    controllerScrollPanel = null;
-    scrollSceneDefaultForward = null;
-    scrollSceneDefaultReverse = null;
-    initController();
-  } // The forward and reverse scenes
-
-
-  function scrollPanelScenes() {
-    // Create scenes for panels, when scrolling forward
-    $('.fullpage__section').each(function (index, elem) {
-      var $scrollPanel = $(elem);
-      var forwardScrollPos = $scrollPanel.offset().top;
-      scrollSceneDefaultForward = new ScrollMagic__WEBPACK_IMPORTED_MODULE_2___default.a.Scene({
-        offset: 10,
-        // Number of pixels user can scroll before panel snaps into place
-        triggerElement: elem,
-        triggerHook: 1 // Trigger this scene when top of panel enters view
-
-      }).on('start', function (event) {
-        if (event.scrollDirection == 'FORWARD') {
-          controllerScrollPanel.scrollTo(forwardScrollPos); // If direction is forward, trigger scrollTo
-        } else if (event.scrollDirection == 'REVERSE') {// Do nothing
-        }
-      }) // Prevent problems with momentum scrolling by pausing for a period of time
-      // .on('enter', function(event) {
-      //    // $('body').addClass('is-locked');
-      //     setTimeout(function() {
-      //         $('body').removeClass('is-locked');
-      //     },1200)
-      // })
-      .addTo(controllerScrollPanel);
-    }); // Create scenes for panels, when scrolling reverse
-
-    $('.fullpage__section:nth-child(n+2)').each(function (index, elem) {
-      var $scrollPanel = $(elem);
-      var reverseScrollPos = $scrollPanel.prev().offset().top;
-      scrollSceneDefaultReverse = new ScrollMagic__WEBPACK_IMPORTED_MODULE_2___default.a.Scene({
-        offset: -10,
-        // Number of pixels user can scroll before panel snaps into place
-        triggerElement: elem,
-        triggerHook: 0 // Trigger this scene when bottom of panel enters view
-
-      }).on('start', function (event) {
-        if (event.scrollDirection == 'FORWARD') {// Do nothing
-        } else if (event.scrollDirection == 'REVERSE') {
-          controllerScrollPanel.scrollTo(reverseScrollPos); // If direction is reverse, trigger scrollTo
-        }
-      }) // Prevent problems with momentum scrolling by pausing for a period of time
-      // .on('leave', function(event) {
-      //     $('body').addClass('is-locked');
-      //     setTimeout(function() {
-      //         $('body').removeClass('is-locked');
-      //     },1200)
-      // })
-      .addTo(controllerScrollPanel);
-    }); // Get window height
-
-    var wh = window.innerHeight;
-    new ScrollMagic__WEBPACK_IMPORTED_MODULE_2___default.a.Scene({
-      offset: wh * 1 - 70
-    }).setClassToggle("header", "page-header").addTo(ctrl);
-    new ScrollMagic__WEBPACK_IMPORTED_MODULE_2___default.a.Scene({
-      offset: wh * 1
-    }).setClassToggle(".sidebar", "sidebar-start").addTo(ctrl);
-  }
-}
+}); // $(window).on('load', gsapScrollPanel);
+//
+// function gsapScrollPanel() {
+//     var controllerScrollPanel,
+//         scrollSceneDefaultForward,
+//         scrollSceneDefaultReverse,
+//         resizeTimer;
+//
+//     // If the .fullpage container exists, set up the fullpage section animations
+//     if ($('.fullpage').length) {
+//         initController();
+//         handleResize();
+//     }
+//
+//     // Initialize the scrollMagic controller
+//     function initController() {
+//
+//         // Init new controller
+//         controllerScrollPanel = new ScrollMagic.Controller();
+//
+//         // Change behaviour of controller to animate scroll instead of jump
+//         controllerScrollPanel.scrollTo(function (newpos) {
+//             TweenMax.to(window, 0.5, {scrollTo: {y: newpos, autoKill: false}});
+//         });
+//
+//         // Init the forward and reverse scenes
+//         scrollPanelScenes();
+//     }
+//
+//     // If window is resized, destroy controller and reset once resize has stopped
+//     function handleResize() {
+//         $(window).resize(function () {
+//             destroyScrollPanels();
+//             clearTimeout(resizeTimer);
+//             resizeTimer = setTimeout(doneResizing, 500);
+//         });
+//
+//         function doneResizing() {
+//             reInitScrollPanels();
+//         }
+//     }
+//
+//     // Destroy scroll panels
+//     function destroyScrollPanels() {
+//         controllerScrollPanel.destroy();
+//         scrollSceneDefaultForward.destroy();
+//         scrollSceneDefaultReverse.destroy();
+//     }
+//
+//     // Re-init scroll panels
+//     function reInitScrollPanels() {
+//         controllerScrollPanel = null;
+//         scrollSceneDefaultForward = null;
+//         scrollSceneDefaultReverse = null;
+//         initController();
+//     }
+//
+//     // The forward and reverse scenes
+//     function scrollPanelScenes() {
+//         // Create scenes for panels, when scrolling forward
+//         $('.fullpage__section').each(function (index, elem) {
+//             var $scrollPanel = $(elem);
+//             var forwardScrollPos = $scrollPanel.offset().top;
+//
+//             scrollSceneDefaultForward = new ScrollMagic.Scene({
+//                 offset: 10, // Number of pixels user can scroll before panel snaps into place
+//                 triggerElement: elem,
+//                 triggerHook: 1,// Trigger this scene when top of panel enters view
+//             })
+//                 .on('start', function (event) {
+//                     if (event.scrollDirection == 'FORWARD') {
+//                         controllerScrollPanel.scrollTo(forwardScrollPos); // If direction is forward, trigger scrollTo
+//                     } else if (event.scrollDirection == 'REVERSE') {
+//                         // Do nothing
+//                     }
+//                 })
+//                 // Prevent problems with momentum scrolling by pausing for a period of time
+//                 // .on('enter', function(event) {
+//                 //    // $('body').addClass('is-locked');
+//                 //     setTimeout(function() {
+//                 //         $('body').removeClass('is-locked');
+//                 //     },1200)
+//                 // })
+//                 .addTo(controllerScrollPanel);
+//         })
+//         // Create scenes for panels, when scrolling reverse
+//         $('.fullpage__section:nth-child(n+2)').each(function (index, elem) {
+//             var $scrollPanel = $(elem);
+//             var reverseScrollPos = $scrollPanel.prev().offset().top;
+//
+//             scrollSceneDefaultReverse = new ScrollMagic.Scene({
+//                 offset: -10, // Number of pixels user can scroll before panel snaps into place
+//                 triggerElement: elem,
+//                 triggerHook: 0,// Trigger this scene when bottom of panel enters view
+//             })
+//                 .on('start', function (event) {
+//                     if (event.scrollDirection == 'FORWARD') {
+//                         // Do nothing
+//                     } else if (event.scrollDirection == 'REVERSE') {
+//                         controllerScrollPanel.scrollTo(reverseScrollPos); // If direction is reverse, trigger scrollTo
+//                     }
+//                 })
+//                 // Prevent problems with momentum scrolling by pausing for a period of time
+//                 // .on('leave', function(event) {
+//                 //     $('body').addClass('is-locked');
+//                 //     setTimeout(function() {
+//                 //         $('body').removeClass('is-locked');
+//                 //     },1200)
+//                 // })
+//                 .addTo(controllerScrollPanel);
+//         })
+//         // Get window height
+//         let wh = window.innerHeight;
+//         new ScrollMagic.Scene({
+//             offset: (wh * 1) - 70
+//         })
+//             .setClassToggle("header", "page-header")
+//             .addTo(ctrl);
+//
+//         new ScrollMagic.Scene({
+//             offset: wh*1,
+//         })
+//             .setClassToggle(".sidebar", "sidebar-start")
+//             .addTo(ctrl);
+//     }
+// }
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js")))
 
 /***/ })
 
 /******/ });
-//# sourceMappingURL=app.7158d62f54f6ae221e1d.js.map
+//# sourceMappingURL=app.4095ffe811b06c9c19ea.js.map
