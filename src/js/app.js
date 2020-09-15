@@ -17,7 +17,7 @@ $(() => {
         nav: false, // must be true
         items: 1,
         loop: true,
-        mouseDrag: false,
+        mouseDrag: true,
         autoplay: false,
         smartSpeed: 1600,
         margin: 0,
@@ -105,36 +105,34 @@ $(() => {
         let windowWidth = $('body').innerWidth()
         if (windowWidth > 769) {
                 $("#aside1").sticky({topSpacing: 0, bottomSpacing: 148});
-            // $('.js-content-scroll').mCustomScrollbar({
-            //     axis: 'y',
-            //     scrollInertia: '300',
-            //     scrollButtons: {enable: false},
-            //     advanced:{ extraDraggableSelectors: ".myClass, #myID" },
-            //     advanced:{ extraDraggableSelectors: ".myClass, #myID" },
 
-                // callbacks:{
-                //     onScrollStart: function () {
-                //         $(this).addClass('is-scrolling');
-                //     },
-                //     onTotalScrollOffset:40,
-                //     onTotalScrollBack:function(){
-                //         $(this).removeClass('is-scrolling');
-                //     },
-                //     onTotalScrollBackOffset:40
-                //
-                // }
-                // callbacks:{
-                //         onTotalScroll: function(){
-                //             $(this).disable();
-                //     },
-                //     onSelectorChange:function(){
-                //         console.log("Scrollbars updated");
-                //     }
-                // }
-           // });
+            //swiper
+            let swiper = new Swiper('.swiper-container', {
+                slidesPerView: 3,
+                scrollbar: {
+                    el: '.swiper-scrollbar',
+                    draggable: true,
+                    hide: false,
+                }
+            });
         }
         else {
             $('.fullpage').find('.js-animate-section').removeClass("fullpage__section");
+            let swiper = new Swiper('.swiper-container')
+            swiper.destroy()
+
+            $('case__wrapper').removeClass('swiper-container')
+            // scroll case
+                $(".mcs-horizontal").mCustomScrollbar({
+                    axis: "x",
+                    theme: "dark-thick",
+                    autoExpandScrollbar: true,
+                    advanced: {autoExpandHorizontalScroll: true},
+                    updateOnContentResize: true,
+                    // scrollbarPosition: 'outside',
+                    scrollInertia: 500,
+                    documentTouchScroll: true
+                });
         }
     }
 
@@ -242,20 +240,7 @@ $('.js-case-slider').slick({
         }
     ]
 });
-// scroll case
-$(window).on('load', function () {
-    $(".mcs-horizontal").mCustomScrollbar({
-        axis: "x",
-        theme: "dark-thick",
-        autoExpandScrollbar: true,
-        advanced: {autoExpandHorizontalScroll: true},
-        updateOnContentResize: true,
-       // scrollbarPosition: 'outside',
-        scrollInertia: 200,
-        documentTouchScroll: true
-    });
 
-});
 
 //accordeon
 $('.js-ui-accordion_click').click(function () {
@@ -267,3 +252,6 @@ $('.js-ui-accordion_click').click(function () {
     }
     $(this).toggleClass('is-active')
 });
+
+
+

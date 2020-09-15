@@ -16,10 +16,20 @@ import './assets/sass/media.sass'
 function requireAll(r) {
     r.keys().forEach(r);
 }
+
 requireAll(require.context('./assets/img/svg/', true, /\.svg$/));
 
 fetch(`./assets/img/svg/sprite.svg`).then(res => {
     return res.text();
 }).then(data => {
     document.getElementById('svg-icons').innerHTML = data;
+});
+
+//swiper
+const swiper = new Swiper('.swiper-container', {
+    slidesPerView: 3,
+    scrollbar: {
+        el: '.swiper-scrollbar',
+        hide: true,
+    },
 });

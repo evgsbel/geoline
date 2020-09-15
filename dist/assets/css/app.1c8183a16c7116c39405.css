@@ -1007,7 +1007,8 @@ img {
     box-sizing: border-box;
     width: 340px;
     margin-right: 20px;
-    flex: 0 0 340px; }
+    flex: 0 0 340px;
+    margin-bottom: 50px; }
     .case__item:last-child {
       margin-right: 0; }
   .case .slick-slide {
@@ -1032,6 +1033,13 @@ img {
     color: #262626; }
     .case__link:hover {
       color: #0B7CD3; }
+  .case .swiper-scrollbar {
+    background-color: transparent;
+    opacity: 1 !important; }
+  .case .swiper-scrollbar-drag {
+    background-color: #0B7CD3; }
+  .case .swiper-container-horizontal > .swiper-scrollbar {
+    left: 0; }
 
 .cases {
   padding-top: 160px; }
@@ -1805,7 +1813,8 @@ img {
     flex-wrap: wrap; }
   .case__item {
     flex: 0 0 50%;
-    max-width: 50%; }
+    max-width: 50%;
+    margin-bottom: 20px; }
   .main-case .case__wrapper {
     flex-wrap: nowrap; }
   .main-case .case__item {
@@ -2098,4 +2107,4 @@ img {
     max-width: 70%; } }
 
 
-/*# sourceMappingURL=app.4095ffe811b06c9c19ea.css.map*/
+/*# sourceMappingURL=app.1c8183a16c7116c39405.css.map*/
