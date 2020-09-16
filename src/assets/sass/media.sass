@@ -19,6 +19,8 @@
     padding-right: 70px
   .news-inner .mt-minus
     margin-top: 0
+  .contacts__info
+    max-width: 85%
 @media (max-width: 1366.98px)
   .top-phone
     grid-column: 10/13
@@ -54,6 +56,7 @@
     width: 18%
   .news-inner__design
     margin-bottom: 30px
+
 @media (max-width: 1280.98px)
   .page-header
     .container
@@ -99,10 +102,13 @@
     width: 100%
   .news-inner__footnote
     position: relative
-    padding: 0
+
     max-width: 100%
     top: 0
-  .news-inner__design_left .news-inner__footnote
+    background-color: #fff
+    padding: 30px
+    box-sizing: border-box
+  .news-inner__design_left .news-inner__footnote,   .news-inner__design_right .news-inner__footnote
     left: 0
 @media (max-width: 1025.98px)
   .sticky-wrapper
@@ -260,6 +266,7 @@
     grid-column: 1/13
     position: relative
     width: 100%
+    padding: 0
     &:after
       content: ''
       display: block

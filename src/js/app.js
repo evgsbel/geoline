@@ -105,6 +105,9 @@ $(() => {
         let windowWidth = $('body').innerWidth()
         if (windowWidth > 769) {
                 $("#aside1").sticky({topSpacing: 0, bottomSpacing: 148});
+                $('#aside1').on('sticky-bottom-reached', function() { console.log("Bottom reached"); });
+                $('#aside1').on('sticky-bottom-unreached', function() { console.log("Bottom unreached"); });
+                $('#aside1').on('sticky-end', function() { console.log("Ended"); });
 
             //swiper
             let swiper = new Swiper('.swiper-container', {
