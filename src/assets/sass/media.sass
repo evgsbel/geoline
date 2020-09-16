@@ -102,7 +102,7 @@
     width: 100%
     margin-right: 0
     margin-bottom: 20px
-    border-bottom: 1px solid #0B7CD3
+    border-bottom: 1px solid rgba(0,0,0,0.1)
   .news__list
     width: 100%
   .news-inner__footnote
@@ -251,7 +251,7 @@
     box-sizing: border-box
     display: flex
   .sidebar
-    min-height: 100%
+    min-height: auto
   .sidebar__logo
     display: none
   .sidebar__social_item_in
@@ -321,7 +321,14 @@
     display: block
   .title
     font-size: 20px
-  .news__last, .news__list-year, .news__list-month
+  .news__last
+    max-height: 0
+    overflow: hidden
+    border: 0
+    &.is-open
+      max-height: 100%
+      border-bottom: 1px solid rgba(0,0,0,0.1)
+  .news__list-year, .news__list-month
     display: none
   .news__list-selects
     display: flex

@@ -776,6 +776,9 @@ $(function () {
       th.html("Посмотреть на карте");
     }
   });
+  $('.js-open-last-mews').on('click', function openLastNews() {
+    $(this).next('.news__last').toggleClass('is-open');
+  });
 }); //ancors
 
 $(function () {
@@ -1073,4 +1076,4 @@ $(function () {
 /***/ })
 
 /******/ });
-//# sourceMappingURL=app.8b619706b16e92787436.js.map
+//# sourceMappingURL=app.bb21eaf1a9f76a2a14b9.js.map

@@ -193,6 +193,9 @@ $(() => {
             th.html("Посмотреть на карте");
         }
     })
+    $('.js-open-last-mews').on('click', function openLastNews() {
+        $(this).next('.news__last').toggleClass('is-open')
+    })
 });
 
 
