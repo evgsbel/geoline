@@ -1318,8 +1318,39 @@ img
 .vacancies
   &__map
     margin-bottom: 75px
+    position: relative
     img
       width: 100%
+      height: auto
+  &__wr
+    display: none
+    &.is-active
+      display: block
+.mark
+  width: 50px
+  height: 35px
+  position: absolute
+  cursor: pointer
+  &__icon
+    z-index: 1
+    position: relative
+  &__count
+    font-family: 'got-regular'
+    font-size: 12px
+    color: #000
+    background-color: #fff
+    border: 1px solid #11BBF9
+    box-sizing: border-box
+    border-radius: 20px
+    display: flex
+    justify-content: center
+    align-items: center
+    width: 32px
+    height: 18px
+    position: absolute
+    top: -5px
+    right: 4px
+    z-index: -1
 .vacancies-in
   &__btn
     background-color: #0B7CD3

@@ -262,4 +262,14 @@ $('.js-select').select2({
 });
 
 
+// tabs in vacancies
+$(document).ready(function($) {
+    $('.js-tab-btn').click(function() {
+        $('.vacancies__wr')
+            .removeClass('is-active')
+            .hide()
+            .filter('[id="' + $(this).data('city') + '"]')
+            .show();
+    });
+});
 
