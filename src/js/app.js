@@ -253,5 +253,10 @@ $('.js-ui-accordion_click').click(function () {
     $(this).toggleClass('is-active')
 });
 
+$('.js-select').select2({
+    minimumResultsForSearch: -1,
+    id: "id"
+});
+
 
 

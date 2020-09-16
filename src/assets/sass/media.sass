@@ -239,7 +239,8 @@
     overflow-y: scroll
     box-sizing: border-box
     display: flex
-
+  .sidebar__logo
+    display: none
   .sidebar__social_item_in
     margin-right: 0
   .slider__dots
@@ -278,6 +279,8 @@
       font-size: 16px
     &__contacts
       display: none
+  .back
+    margin-top: 160px
   .content
     grid-column: 1/13
     margin-top: 50px
@@ -302,6 +305,12 @@
     grid-column: 1/13
   .only-tablet
     display: block
+  .title
+    font-size: 20px
+  .news__last, .news__list-year, .news__list-month
+    display: none
+  .news__list-selects
+    display: flex
 @media (max-width: 480.98px)
   .news__list-year
     flex-wrap: wrap

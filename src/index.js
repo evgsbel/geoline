@@ -5,6 +5,7 @@ import 'owl.carousel/dist/owl.carousel.min';
 import '@fancyapps/fancybox'
 import 'malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min'
 import 'jquery-sticky/jquery.sticky'
+import 'select2/dist/js/select2.min'
 import './js/app'
 import './js/scrollAnimations.js'
 // SCSS
