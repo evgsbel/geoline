@@ -684,16 +684,7 @@ $(function () {
     if (windowWidth > 769) {
       $("#aside1").sticky({
         topSpacing: 0,
-        bottomSpacing: 148
-      });
-      $('#aside1').on('sticky-bottom-reached', function () {
-        console.log("Bottom reached");
-      });
-      $('#aside1').on('sticky-bottom-unreached', function () {
-        console.log("Bottom unreached");
-      });
-      $('#aside1').on('sticky-end', function () {
-        console.log("Ended");
+        bottomSpacing: 244
       }); //swiper
 
       var swiper = new Swiper('.swiper-container', {
@@ -1082,4 +1073,4 @@ $(function () {
 /***/ })
 
 /******/ });
-//# sourceMappingURL=app.0f5ea14a148f5dc37953.js.map
+//# sourceMappingURL=app.80ce7a6a3c21df3458e1.js.map

@@ -124,7 +124,7 @@ ul
 img
   max-width: 100%
 .section-in
-
+  padding-bottom: 100px
 //header
 .header
   position: fixed
@@ -492,6 +492,7 @@ img
   top: 0
   padding-bottom: 60px
   box-sizing: border-box
+  min-height: 100vh
   &:before
     content: ''
     height: 100%
@@ -530,6 +531,9 @@ img
   &__contacts
     justify-content: space-between
     align-items: center
+    position: absolute
+    bottom: 50px
+    width: calc(100% - 100px)
   &__social
     &_item
       background-color: #0B7CD3
@@ -720,6 +724,7 @@ img
     margin-bottom: 42px
   &__design
     display: flex
+    align-items: flex-start
     justify-content: space-between
     margin-bottom: 35px
     &_txt, img
@@ -958,7 +963,7 @@ img
 .menu-open .menu
   right: 0
 .back
-  display: flex
+  display: inline-flex
   align-items: center
   margin-bottom: 25px
   text-decoration: none
