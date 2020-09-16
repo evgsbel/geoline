@@ -1783,6 +1783,9 @@ img {
     width: 350px; }
     .sidebar__contacts {
       flex-wrap: wrap; }
+      .sidebar__contacts_main {
+        position: relative;
+        bottom: 0; }
     .sidebar__phone {
       width: 100%;
       margin-bottom: 20px; }
@@ -2189,4 +2192,4 @@ img {
     max-width: 70%; } }
 
 
-/*# sourceMappingURL=app.80ce7a6a3c21df3458e1.css.map*/
+/*# sourceMappingURL=app.8b619706b16e92787436.css.map*/
