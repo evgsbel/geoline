@@ -629,14 +629,18 @@ img {
     box-sizing: border-box;
     z-index: 1000; }
     .nav__sub_item {
-      padding-left: 25px;
-      background-color: #fff; }
+      background-color: #fff;
+      padding-left: 40px;
+      padding-bottom: 30px; }
+      .nav__sub_item:first-child {
+        padding-top: 40px; }
+      .nav__sub_item:last-child {
+        padding-bottom: 40px; }
     .nav__sub_link {
       color: #353535;
       font-size: 13px;
       font-family: 'mont-regular', serif;
-      text-decoration: none;
-      line-height: 40px; }
+      text-decoration: none; }
 
 .top-phone {
   grid-column: 11 / 13;
@@ -1015,7 +1019,9 @@ img {
     width: 340px;
     margin-right: 20px;
     flex: 0 0 340px;
-    margin-bottom: 50px; }
+    margin-bottom: 50px;
+    color: #000;
+    text-decoration: none; }
     .case__item:last-child {
       margin-right: 0; }
   .case .slick-slide {
@@ -1039,7 +1045,8 @@ img {
     font-family: 'got-regular', Serif;
     color: #262626; }
     .case__link:hover {
-      color: #0B7CD3; }
+      color: #0B7CD3;
+      text-decoration: underline; }
   .case .swiper-scrollbar {
     background-color: transparent;
     opacity: 1 !important; }
@@ -1400,7 +1407,8 @@ img {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  margin-bottom: 35px; }
+  margin-bottom: 35px;
+  flex-wrap: wrap; }
   .news__list-year__item {
     color: #5F5F5F;
     font-size: 16px;
@@ -1721,6 +1729,29 @@ img {
   .vacancies__wr.is-active {
     display: block; }
 
+.vacancies__nav {
+  display: flex;
+  flex-wrap: wrap; }
+
+.vacancies__btn {
+  margin-right: 9px;
+  margin-bottom: 10px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 3px;
+  border: 0;
+  cursor: pointer;
+  transition: .3s all ease-in-out;
+  font-size: 14px;
+  font-family: 'mont-medium', serif;
+  background-color: #fff;
+  color: #5F5F5F; }
+  .vacancies__btn:hover {
+    color: #fff;
+    background-color: #0B7CD3; }
+
 .mark {
   width: 50px;
   height: 35px;
@@ -1837,6 +1868,10 @@ img {
     margin-bottom: 20px; }
   .news__list-month__item {
     width: 18%; }
+  .news__list-year {
+    justify-content: flex-start; }
+  .news__list-year__item {
+    width: 14%; }
   .news-inner__design {
     margin-bottom: 30px; } }
 
@@ -1989,7 +2024,9 @@ img {
     top: 0;
     width: 100%; }
   .contacts__wr.is-active .contacts__item {
-    width: 100%; } }
+    width: 100%; }
+  .vacancies__map {
+    display: none; } }
 
 @media (max-width: 768.98px) {
   body {
@@ -2235,4 +2272,4 @@ img {
     max-width: 70%; } }
 
 
-/*# sourceMappingURL=app.6321b0e877db0243febe.css.map*/
+/*# sourceMappingURL=app.09f89a9c4e1b749896a2.css.map*/

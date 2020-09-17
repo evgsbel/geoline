@@ -179,7 +179,6 @@ img
         background-color: #0B7CD3
       &_link
         color: #fff
-
   .logo__caption
     color: #252525
 // first
@@ -274,14 +273,18 @@ img
     box-sizing: border-box
     z-index: 1000
     &_item
-      padding-left: 25px
       background-color: #fff
+      padding-left: 40px
+      padding-bottom: 30px
+      &:first-child
+        padding-top: 40px
+      &:last-child
+        padding-bottom: 40px
     &_link
       color: #353535
       font-size: 13px
       font-family: 'mont-regular', serif
       text-decoration: none
-      line-height: 40px
 .top-phone
   grid-column: 11 / 13
   display: block
@@ -661,6 +664,8 @@ img
     margin-right: 20px
     flex: 0 0 340px
     margin-bottom: 50px
+    color: #000
+    text-decoration: none
     &:last-child
       margin-right: 0
   .slick-slide
@@ -685,6 +690,7 @@ img
     color: #262626
     &:hover
       color: #0B7CD3
+      text-decoration: underline
   .swiper-scrollbar
     background-color: transparent
     opacity: 1 !important
@@ -1035,6 +1041,7 @@ img
     justify-content: space-between
     align-items: flex-end
     margin-bottom: 35px
+    flex-wrap: wrap
     &__item
       color: #5F5F5F
       font-size: 16px
@@ -1326,6 +1333,27 @@ img
     display: none
     &.is-active
       display: block
+  &__nav
+    display: flex
+    flex-wrap: wrap
+  &__btn
+    margin-right: 9px
+    margin-bottom: 10px
+    height: 30px
+    display: flex
+    align-items: center
+    justify-content: center
+    border-radius: 3px
+    border: 0
+    cursor: pointer
+    transition: .3s all ease-in-out
+    font-size: 14px
+    font-family: 'mont-medium', serif
+    background-color: #fff
+    color: #5F5F5F
+    &:hover
+      color: #fff
+      background-color: #0B7CD3
 .mark
   width: 50px
   height: 35px

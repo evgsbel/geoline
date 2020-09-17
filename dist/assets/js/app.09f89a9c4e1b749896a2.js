@@ -577,6 +577,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+ // import './js/swiper'
 
 
 
@@ -717,7 +718,21 @@ $(function () {
       return false;
     }
   }
-}); // fix blocks
+});
+
+function checkHeight() {
+  var windowHeight = window.innerHeight;
+
+  if (windowHeight < 650) {
+    $('body').addClass('test');
+  }
+
+  checkHeight();
+  $(window).resize(function () {
+    checkHeight(); // проверит при изменении размера окна клиента
+  });
+} // fix blocks
+
 
 $(function () {
   function checkWidth() {
@@ -1124,4 +1139,4 @@ $(function () {
 /***/ })
 
 /******/ });
-//# sourceMappingURL=app.6321b0e877db0243febe.js.map
+//# sourceMappingURL=app.09f89a9c4e1b749896a2.js.map

@@ -99,6 +99,16 @@ $(() => {
         }
     }
 });
+function checkHeight() {
+let windowHeight = window.innerHeight;
+if (windowHeight < 650) {
+    $('body').addClass('test')
+}
+checkHeight();
+$(window).resize(function () {
+    checkHeight(); // проверит при изменении размера окна клиента
+});
+}
 // fix blocks
 $(() => {
     function checkWidth() {
