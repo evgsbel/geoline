@@ -442,6 +442,7 @@ img
 .dots-wrap
   position: relative
   filter: url(#goo)
+  -webkit-filter: url(#goo)
   button.owl-dot
     position: relative
     display: inline-block
@@ -483,7 +484,8 @@ img
 .owl-svg
     position: fixed
     z-index: -99
-
+.safari .dots-wrap
+  filter: none
 
 .opportunities
   .container

@@ -283,3 +283,13 @@ $(document).ready(function($) {
     });
 });
 
+const userAgent = navigator.userAgent.toLowerCase();
+if (userAgent .indexOf('safari')!=-1){
+    if(userAgent .indexOf('chrome')  > -1){
+        $('body').addClass('chrome')
+    }else if((userAgent .indexOf('opera')  > -1)||(userAgent .indexOf('opr')  > -1)){
+        $('body').addClass('opera')
+    }else{
+        $('body').addClass('safari')
+    }
+}

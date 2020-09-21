@@ -897,6 +897,17 @@ $(document).ready(function ($) {
     $('.vacancies__wr').removeClass('is-active').hide().filter('[id="' + $(this).data('city') + '"]').show();
   });
 });
+var userAgent = navigator.userAgent.toLowerCase();
+
+if (userAgent.indexOf('safari') != -1) {
+  if (userAgent.indexOf('chrome') > -1) {
+    $('body').addClass('chrome');
+  } else if (userAgent.indexOf('opera') > -1 || userAgent.indexOf('opr') > -1) {
+    $('body').addClass('opera');
+  } else {
+    $('body').addClass('safari');
+  }
+}
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js"), __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js")))
 
 /***/ }),
@@ -1138,4 +1149,4 @@ $(function () {
 /***/ })
 
 /******/ });
-//# sourceMappingURL=app.ddf40aea9817ba53ce5f.js.map
+//# sourceMappingURL=app.ad0f4a74acdcbb08662d.js.map

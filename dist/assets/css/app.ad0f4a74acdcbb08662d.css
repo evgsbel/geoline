@@ -796,8 +796,8 @@ img {
 
 .dots-wrap {
   position: relative;
-  -webkit-filter: url(#goo);
-          filter: url(#goo); }
+  filter: url(#goo);
+  -webkit-filter: url(#goo); }
   .dots-wrap button.owl-dot {
     position: relative;
     display: inline-block;
@@ -842,6 +842,10 @@ img {
 .owl-svg {
   position: fixed;
   z-index: -99; }
+
+.safari .dots-wrap {
+  -webkit-filter: none;
+          filter: none; }
 
 .opportunities .container {
   position: static; }
@@ -2282,4 +2286,4 @@ img {
     max-width: 70%; } }
 
 
-/*# sourceMappingURL=app.ddf40aea9817ba53ce5f.css.map*/
+/*# sourceMappingURL=app.ad0f4a74acdcbb08662d.css.map*/
