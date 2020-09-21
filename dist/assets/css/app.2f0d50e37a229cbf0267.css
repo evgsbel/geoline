@@ -2194,10 +2194,11 @@ img {
     .footer__email {
       grid-column: 1/13;
       margin-top: 20px; }
+    .footer__logo {
+      margin-right: 15px; }
     .footer__copy {
       display: flex;
       flex-wrap: wrap;
-      justify-content: space-around;
       align-items: center;
       border-bottom: 1px solid #1B1B1B;
       padding-bottom: 20px; }
@@ -2276,4 +2277,4 @@ img {
     max-width: 70%; } }
 
 
-/*# sourceMappingURL=app.9e815be015a753e2646d.css.map*/
+/*# sourceMappingURL=app.2f0d50e37a229cbf0267.css.map*/
