@@ -2060,6 +2060,8 @@ img {
     overflow-y: scroll;
     box-sizing: border-box;
     display: flex; }
+    .menu .top-phone {
+      display: block; }
   .sidebar {
     min-height: auto; }
   .sidebar__logo {
@@ -2274,4 +2276,4 @@ img {
     max-width: 70%; } }
 
 
-/*# sourceMappingURL=app.027349e0eb64311c39dc.css.map*/
+/*# sourceMappingURL=app.9e815be015a753e2646d.css.map*/
