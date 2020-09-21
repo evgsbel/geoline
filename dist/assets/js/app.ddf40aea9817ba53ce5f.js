@@ -630,14 +630,13 @@ $(function () {
   var owl = $(".top-slider-js");
   owl.owlCarousel({
     nav: false,
-    // must be true
     items: 1,
     loop: true,
     mouseDrag: true,
     autoplay: false,
     smartSpeed: 1600,
     margin: 0,
-    dotsClass: 'owl-dots',
+    dotsClass: 'owl-dots block-dots',
     responsive: {
       0: {
         animateIn: 'fadeIn',
@@ -1139,4 +1138,4 @@ $(function () {
 /***/ })
 
 /******/ });
-//# sourceMappingURL=app.2f0d50e37a229cbf0267.js.map
+//# sourceMappingURL=app.ddf40aea9817ba53ce5f.js.map

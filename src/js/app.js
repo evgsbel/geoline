@@ -14,14 +14,14 @@ $(() => {
     var owl = $(".top-slider-js");
 
     owl.owlCarousel({
-        nav: false, // must be true
+        nav: false,
         items: 1,
         loop: true,
         mouseDrag: true,
         autoplay: false,
         smartSpeed: 1600,
         margin: 0,
-        dotsClass: 'owl-dots',
+        dotsClass: 'owl-dots block-dots',
         responsive: {
             0: {
                 animateIn: 'fadeIn', // add this
