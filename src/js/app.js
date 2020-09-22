@@ -293,3 +293,34 @@ if (userAgent .indexOf('safari')!=-1){
         $('body').addClass('safari')
     }
 }
+
+
+
+$(window).scroll(function(){
+    var $sections = $('.test');
+    $sections.each(function(i,el){
+        var top  = $(el).offset().top - 100;
+        var bottom = top +$(el).height();
+        var scroll = $(window).scrollTop();
+        var id = $(el).attr('id');
+        if( scroll > top && scroll < bottom){
+            $('.case-in__nav a.active').removeClass('active');
+            $('.case-in__nav a[href="#'+id+'"]').addClass('active');
+
+        }
+    })
+});
+
+$(".case-in__nav").on("click","a", function (event) {
+    // исключаем стандартную реакцию браузера
+    event.preventDefault();
+
+    // получем идентификатор блока из атрибута href
+    var id  = $(this).attr('href'),
+
+        // находим высоту, на которой расположен блок
+        top = $(id).offset().top-100;
+
+    // анимируем переход к блоку, время: 800 мс
+    $('body,html').animate({scrollTop: top}, 800);
+});
