@@ -84,6 +84,7 @@ $(() => {
             this.children[1].style.height = "auto";
             this.children[1].style.overflow = "visible";
             this.children[1].style.opacity = "1";
+            this.children[1].style.zIndex = "10000"
         } else {
             return false;
         }
@@ -94,6 +95,7 @@ $(() => {
             this.children[1].style.height = "0px";
             this.children[1].style.overflow = "hidden";
             this.children[1].style.opacity = "0";
+            this.children[1].style.zIndex = "-1"
         } else {
             return false;
         }

@@ -119,6 +119,12 @@
     max-width: 50%
   .news-inner .mt-minus
     margin-top: 170px
+  .only-1280
+    display: block
+  .news__list-year__item
+    margin-bottom: 10px
+  .news__list-year__item_active
+    font-size: 22px
 @media (max-width: 1025.98px)
   .sticky-wrapper
     width: 300px
@@ -320,6 +326,8 @@
       display: none
   .section-in .sidebar
     padding: 0
+  .section-in_main .sidebar
+    padding: 80px 0 0 0
   .back
     margin-top: 160px
   .content
@@ -415,6 +423,8 @@
       align-items: center
       border-bottom: 1px solid #1B1B1B
       padding-bottom: 20px
+      &_link
+        display: none
       &_wr
         margin-left: 20px
         justify-content: flex-start
@@ -489,8 +499,6 @@
     font-size: 16px
   .sidebar__social_item:first-child
     margin-right: 15px
-  .footer__copy
-    align-items: flex-start
   .footer__copy_wr
     max-width: 70%
 

@@ -703,6 +703,7 @@ $(function () {
       this.children[1].style.height = "auto";
       this.children[1].style.overflow = "visible";
       this.children[1].style.opacity = "1";
+      this.children[1].style.zIndex = "10000";
     } else {
       return false;
     }
@@ -713,6 +714,7 @@ $(function () {
       this.children[1].style.height = "0px";
       this.children[1].style.overflow = "hidden";
       this.children[1].style.opacity = "0";
+      this.children[1].style.zIndex = "-1";
     } else {
       return false;
     }
@@ -1176,4 +1178,4 @@ $(function () {
 /***/ })
 
 /******/ });
-//# sourceMappingURL=app.279e1b62ba1b3bf41f44.js.map
+//# sourceMappingURL=app.192526f8d211fba65a4d.js.map
